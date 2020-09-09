@@ -1,18 +1,14 @@
-.navbar-lewagon {
+/* Style the navbar */
+.navbar-per {
   justify-content: space-between;
-  background: white;
+  background: linear-gradient(to bottom, #000000c4, black);
+  box-shadow: inset 0px 0px 40px 40px #0a0a0a7a;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-per .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-per .navbar-brand img {
   height: 40px;
-}
-
-.logo {
-  font-family : Arciform Sans;
-  font-size : 92px;
-  color : #EF7A3F;
 }
