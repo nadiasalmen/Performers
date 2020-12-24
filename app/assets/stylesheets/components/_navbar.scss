@@ -1,5 +1,6 @@
 /* Style the navbar */
 .navbar-per {
+  display: flex;
   justify-content: space-between;
   background: linear-gradient(to bottom, #000000c4, black);
   box-shadow: inset 0px 0px 40px 40px #0a0a0a7a;
@@ -7,8 +8,4 @@
 
 .navbar-per .navbar-collapse {
   flex-grow: 0;
-}
-
-.navbar-per .navbar-brand img {
-  height: 40px;
 }
