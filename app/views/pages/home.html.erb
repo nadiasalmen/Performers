@@ -7,9 +7,19 @@
           <p class="mt-4 mb-5">A través de nuestra plataforma cultural online ponemos experiencias únicas al alcance de todos conectando artistas con eventos. </p>
         </div>
       </div>
-      <form action="#" class="w-100 form-inline d-flex my-4 m-0"  method="#" >
+      <form action="https://docs.google.com/forms/d/e/1FAIpQLSd7Bt9RlqIsWi6ewkrZZ01REcxBRxGL8MIDEbbnkCWdHB7mVQ/formResponse"
+            target="_self" id="bootstrapForm" method="POST" class="w-100 form-inline d-flex my-4 m-0" >
         <div class="form-group row w-100 m-0 p-0">
-          <input name="inputEmail" id="inputEmail" placeholder="Correo electrónico" class="flex-grow-1 ml-0 mr-2 px-3 py-2 bg-dark border-0 rounded-lg">
+          <input id="emailAddress" type="email" name="emailAddress" placeholder="Correo electrónico" class="flex-grow-1 ml-0 mr-2 px-3 py-2 bg-dark border-0 rounded-lg" required>
+          <input type="hidden" name="fvv" value="1">
+          <input type="hidden" name="fbzx" value="-3938340793280587524">
+          <!--
+              CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
+              This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
+              Keep this in mind if you plan to change this code to recreate any sort of multipage-feature in your exported form.
+              We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
+           -->
+          <input type="hidden" name="pageHistory" value="0">
           <button type="submit" class="button btn-orange ml-2 mr-0 px-3 py-2 border-0 rounded-lg font-weight-bold">Manteneme informado!</button>
         </div>
       </form>
