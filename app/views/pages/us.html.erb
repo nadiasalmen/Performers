@@ -21,25 +21,76 @@
         <h1 class="pb-5 font-weight-bold">Nosotros</h1>
         <div class="container d-flex justify-content-between pt-5">
           <div class="container d-flex align-items-center justify-content-center flex-column text-center">
-            <div class="avatar-large">
-              <%= image_tag "avatar-agustin.png", class: "rounded-circle avatar-bordered" %>
+            <div class="popup" id="popup-1">
+              <div class="overlay"></div>
+              <div class="content d-flex p-4">
+                <div class="close-btn" id="close-btn-1">&times;</div>
+                <div>
+                  <%= image_tag "avatar-agustin.png", class: "avatar-bordered" %>
+                </div>
+                <div class="container ml-3">
+                  <h1 class="mb-4">Agustín<br>Capriotti</h1>
+                  <p>Trabaja como DJ desde hace 8 años y le gusta tocar la guitarra.</p>
+                  <p>Es el alma creativa del equipo. Le encanta la música, la publicidad y el diseño, y se la pasa perfeccionándose en esas actividades.</p>
+                  <p>Quiso ser abogado, pero después de una serie de eventos afortunados empezó a estudiar Diseño Integral.</p>
+                </div>
+              </div>
             </div>
+            <button class="btn-transparent" id="popup-btn-1">
+              <div class="avatar-large">
+                <%= image_tag "avatar-agustin.png", class: "rounded-circle avatar-bordered" %>
+              </div>
+            </button>
             <div class="container m-3">
               <h2>Agustín</h2>
             </div>
           </div>
           <div class="container d-flex align-items-center justify-content-center flex-column text-center">
-            <div class="avatar-large">
-              <%= image_tag "avatar-ivan.png", class: "rounded-circle avatar-bordered" %>
+            <div class="popup" id="popup-2">
+              <div class="overlay"></div>
+              <div class="content d-flex p-4">
+                <div class="close-btn" id="close-btn-2">&times;</div>
+                <div>
+                  <%= image_tag "avatar-ivan.png", class: "avatar-bordered" %>
+                </div>
+                <div class="container ml-3">
+                  <h1 class="mb-4">Iván<br>Scavuzzo</h1>
+                  <p>Excelente pianista en construcción, Hip Hop freestyler y tiene experiencia organizando eventos culturales en el sector público y privado.</p>
+                  <p>Extremadamente proactivo, ama más emprender  que al Minuet en Sol Mayor de Bach.</p>
+                  <p>Es super puntilloso en tareas administrativas y contables. Estudia Administración de Empresas en la Universidad Austral.</p>
+                </div>
+              </div>
             </div>
+            <button class="btn-transparent" id="popup-btn-2">
+              <div class="avatar-large">
+                <%= image_tag "avatar-ivan.png", class: "rounded-circle avatar-bordered" %>
+              </div>
+            </button>
             <div class="container m-3">
               <h2>Iván</h2>
             </div>
           </div>
           <div class="container d-flex align-items-center justify-content-center flex-column text-center">
-            <div class="avatar-large">
-              <%= image_tag "avatar-nadia.png", class: "rounded-circle avatar-bordered" %>
+            <div class="popup" id="popup-3">
+              <div class="overlay"></div>
+              <div class="content d-flex p-4">
+                <div class="close-btn" id="close-btn-3">&times;</div>
+                <div>
+                  <%= image_tag "avatar-nadia.png", class: "avatar-bordered" %>
+                </div>
+                <div class="container ml-3">
+                  <h1 class="mb-4">Nadia<br>Salmen</h1>
+                  <p>Hizo comedias musicales durante muchos años, es fanática. Actualmente es Desarrolladora web y trabaja de manera freelance.</p>
+                  <p>Es Ingeniera Industrial con una maestría en logística y supply chain. Además se encuentra haciendo una maestría en ciencia de datos y gestión de proyectos digitales.</p>
+                  <p>Es la fuerza tecnológica que necesitamos en este proyecto.</p>
+                </div>
+              </div>
             </div>
+            <button class="btn-transparent" id="popup-btn-3">
+              <div class="avatar-large">
+                <%= image_tag "avatar-nadia.png", class: "rounded-circle avatar-bordered" %>
+              </div>
+            </button>
             <div class="container m-3">
               <h2>Nadia</h2>
             </div>
@@ -49,3 +100,4 @@
     </div>
   </div>
 </div>
+
