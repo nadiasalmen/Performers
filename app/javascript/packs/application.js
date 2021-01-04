@@ -28,16 +28,9 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { initJqueryForm } from '../plugins/init_jqueryform';
-import { togglePopup1, togglePopup2, togglePopup3, closePopup1, closePopup2, closePopup3 } from '../components/popups';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initJqueryForm();
-  togglePopup1();
-  togglePopup2();
-  togglePopup3();
-  closePopup1();
-  closePopup2();
-  closePopup3();
 });

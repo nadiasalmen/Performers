@@ -4,13 +4,16 @@
 }
 
 .avatar-large {
-  width: 300px;
   border-radius: 50%;
   border: #FA8230 24px solid;
 }
 
 .avatar-large:focus {
   outline: none;
+}
+
+.avatar-large img {
+  filter: saturate(0.7);
 }
 
 .avatar-bordered {
