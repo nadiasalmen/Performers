@@ -4,8 +4,8 @@
 }
 
 .avatar-large {
-  border-radius: 50%;
-  border: #FA8230 24px solid;
+  max-width: 80%;
+  height: auto;
 }
 
 .avatar-large:focus {
@@ -14,6 +14,11 @@
 
 .avatar-large img {
   filter: saturate(0.7);
+  display: block;
+  max-width: 80%;
+  height: auto;
+  margin: auto;
+  border: #E67E22 8px solid;
 }
 
 .avatar-bordered {
