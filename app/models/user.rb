@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_one :role
   has_many :performances
+  has_many :events
 end
