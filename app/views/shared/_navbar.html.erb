@@ -9,14 +9,23 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav mr-auto align-items-center">
         <li class="nav-item active">
-          <%= link_to "Home", "/", class: "nav-link text-white font-weight-bold" %>
+          <%= link_to "Inicio", "/", class: "nav-link text-white font-weight-bold ml-2" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Nosotros", "/us", class: "nav-link text-white font-weight-bold" %>
+          <%= link_to "Nosotros", "/us", class: "nav-link text-white font-weight-bold ml-2" %>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item">
+          <%= link_to "Shows", "/us", class: "nav-link text-white font-weight-bold ml-2" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Soy Artista", "/us", class: "nav-link text-white font-weight-bold ml-2" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Ingresar", "/us", class: "button btn-orange px-3 py-1 font-weight-lighter border-0 ml-2" %>
+        </li>
+        <!-- <li class="nav-item dropdown">
           <%= link_to "#", class: "nav-link dropdown-toggle text-white font-weight-bold",  id: "navbarDropdown", role: "button", data: { toggle: "dropdown"}, 'aria-haspopup': true, 'aria-expanded': false do %>
             <i class="fas fa-user"></i>
           <% end %>
@@ -26,31 +35,8 @@
             <div class="dropdown-divider"></div>
             <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
-        </li>
+        </li> -->
       </ul>
     </div>
   </div>
 </div>
-
-<!-- <ul class="navbar-nav mr-auto">
-  <% if user_signed_in? %>
-    <li class="nav-item active">
-      <%= link_to "Home", "#", class: "nav-link" %>
-    </li>
-    <li class="nav-item">
-      <%= link_to "Messages", "#", class: "nav-link" %>
-    </li>
-    <li class="nav-item dropdown">
-      <%= image_tag "default-avatar.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-        <%= link_to "Action", "#", class: "dropdown-item" %>
-        <%= link_to "Another action", "#", class: "dropdown-item" %>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-      </div>
-    </li>
-  <% else %>
-    <li class="nav-item">
-      <%= link_to "Login", new_user_session_path, class: "nav-link text-white" %>
-    </li>
-  <% end %>
-</ul> -->

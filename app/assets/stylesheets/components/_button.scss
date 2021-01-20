@@ -16,8 +16,9 @@
 
 .btn-orange {
   color: white;
-  background-color: #FD7545;
+  background-color: #ff652e;
   font-weight: bold;
+  border-radius: 8px;
 }
 
 .btn-orange:hover {
@@ -28,7 +29,7 @@
 
 input:focus {
   border: 0;
-  outline-color: #FD7545;
+  outline-color: #ff652e;
 }
 
 input::placeholder {
