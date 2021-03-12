@@ -6,6 +6,6 @@ class GenreTest < ActiveSupport::TestCase
   # end
   test "should not save genre without name" do
     genre = Genre.new
-    assert_not genre.save, "Saved the genre without a title"
+    assert_not genre.save, "Saved the genre without a name"
   end
 end

@@ -6,6 +6,6 @@ class ShowCategoryTest < ActiveSupport::TestCase
   # end
   test "should not save show_category without name" do
     show_category = ShowCategory.new
-    assert_not show_category.save, "Saved the show_category without a title"
+    assert_not show_category.save, "Saved the show_category without a name"
   end
 end
