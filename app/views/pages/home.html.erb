@@ -1,35 +1,21 @@
-<div class="container" style="min-height: 100vh;">
-  <div class="row align-items-center h-100">
-    <div class="container col-md-8 my-5 py-5 h-100">
-      <h1 class="mt-4 mb-4 font-weight-bold">Momentos especiales merecen shows especiales.</h1>
+<div class="container-fluid bg-dark mt-3 opacity-70" style="min-height: 2vh;">
+ <p class="text-center m-0">¿Querés publicar tu show? Hacé <%= link_to "click acá", "/", class: "orange-link" %> .</p>
+</div>
+<div class="container p-0 mb-5" style="height: 88vh;">
+  <div class="row h-100">
+    <div class="container col-md-7 m-auto p-0">
+      <h1 class="font-weight-bold m-0">Contratá artistas de <br/> manera rápida y segura.</h1>
       <div class="row">
-        <div class="col-12 col-md-8">
-          <p class="mt-4 mb-5">A través de nuestra plataforma cultural online ponemos experiencias únicas al alcance de todos conectando artistas con eventos. </p>
+        <div class="col-12 col-md-7">
+          <p>Ponemos experiencias únicas al alcance de todos, conectando artistas con eventos. </p>
         </div>
       </div>
-      <form action="https://docs.google.com/forms/d/e/1FAIpQLSd7Bt9RlqIsWi6ewkrZZ01REcxBRxGL8MIDEbbnkCWdHB7mVQ/formResponse"
-            target="_self" id="bootstrapForm" method="POST" class="w-100 form-inline d-flex my-4 m-0" >
-        <div class="form-row w-100 p-0">
-          <div class="form-group col-12 col-lg-8 w-100 mb-md-3">
-            <input id="emailAddress" type="email" name="emailAddress" placeholder="Correo electrónico" class="flex-grow-1 px-3 py-2 bg-dark border-0 rounded-lg w-100 text-center text-lg-left" required>
-            <input type="hidden" name="fvv" value="1">
-            <input type="hidden" name="fbzx" value="-3938340793280587524">
-            <!--
-                CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
-                This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
-                Keep this in mind if you plan to change this code to recreate any sort of multipage-feature in your exported form.
-                We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
-             -->
-            <input type="hidden" name="pageHistory" value="0">
-            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-          </div>
-          <div class="form-group col-12 col-lg-4 w-100 mb-md-3">
-            <input type="submit" class="button btn-orange px-3 py-2 border-0 rounded-lg font-weight-bold w-100" value="Manteneme informado!">
-          </div>
-        </div>
-      </form>
+      <div class="w-100 d-flex my-4 m-0" >
+        <%= link_to "Descubrir Shows", "/", class: "button btn-orange px-3 py-2 border-0 mr-2 font-weight-bold rounded-pill" %>
+        <%= link_to "Soy Artista", "/", class: "button btn-transparent px-3 py-2 border-0 ml-2" %>
+      </div>
     </div>
-    <div class="container col-4 h-100 d-none d-md-block">
+    <div class="container col-5 d-none d-md-block m-auto p-0">
       <%= image_tag "landing-beto-deg.jpg", class: "w-100 d-none d-md-block"%>
     </div>
   </div>
