@@ -1,31 +1,62 @@
 <div class="container">
-  <div class="container d-flex flex-column align-items-center justify-content-center">
-    <%= link_to "#", class: "" do %>
-      <%= image_tag "background-image-logo.png", id: "footer-logo" %>
-    <% end %>
-    <ul class="nav nav-items">
-      <li class="nav-item">
-        <%= link_to "Home", "/", class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Nosotros", "/us", class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "T & C", "/", class: "nav-link" %>
-      </li>
-    </ul>
+  <div class="container d-flex align-items-center justify-content-between border-bottom border-secondary p-0">
+    <div class="container d-flex justify-content-start align-items-center p-0">
+      <%= link_to "#", class: "" do %>
+        <%= image_tag "logo_definitivo.png", id: "footer-logo" %>
+      <% end %>
+      <ul class="nav nav-items">
+        <li class="nav-item">
+          <%= link_to "Shows", "/", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Soy Artista", "/", class: "nav-link p-2" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Nosotros", "/us", class: "nav-link p-2" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "FAQ", "/", class: "nav-link p-2" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "TyC", "/", class: "nav-link p-2" %>
+        </li>
+      </ul>
+    </div>
+    <div class="container d-flex justify-content-end align-items-center p-0">
+      <form action="https://docs.google.com/forms/d/e/1FAIpQLSd7Bt9RlqIsWi6ewkrZZ01REcxBRxGL8MIDEbbnkCWdHB7mVQ/formResponse"
+            target="_self" id="bootstrapForm" method="POST" class="w-100 form-inline d-flex my-4 m-0" >
+        <div class="form-row w-100 p-0 mb-0 align-items-center">
+          <div class="form-group col-12 col-lg-8 w-100">
+            <input id="emailAddress" type="email" name="emailAddress" placeholder="Correo electrónico" class="px-2 py-1 bg-dark border-0 rounded-lg w-100 text-center text-lg-left rounded-pill" required>
+            <input type="hidden" name="fvv" value="1">
+            <input type="hidden" name="fbzx" value="-3938340793280587524">
+            <!--
+                CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
+                This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
+                Keep this in mind if you plan to change this code to recreate any sort of multipage-feature in your exported form.
+                We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
+             -->
+            <input type="hidden" name="pageHistory" value="0">
+            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          </div>
+          <div class="form-group col-12 col-lg-4 w-100">
+            <input type="submit" class="button btn-orange px-2 py-1 border-0 rounded-lg font-weight-bold w-100 rounded-pill" value="Suscribirme!">
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
-  <div class="container d-md-flex align-items-center justify-content-md-between my-3 text-center">
-    <div class="container footer-icons d-flex align-items-center mb-3 mb-md-auto text-center text-md-left justify-content-center justify-content-md-start">
+  <div class="container d-md-flex align-items-center justify-content-md-between my-3 text-center p-0">
+    <div class="container footer-icons d-flex flex-column justify-content-center mb-3 mb-md-auto p-0">
+      <p class="text-md-left fs-6"><i class="fas fa-mobile-alt mr-1"></i> +54 341 3385351</p>
+      <p class="text-md-left fs-6"><i class="far fa-envelope mr-1"></i> performers.show@gmail.com</p>
+      <p class="text-md-left fs-6"><i class="fas fa-globe-americas mr-1"></i> Rosario, Argentina</p>
+    </div>
+    <div class="container footer-icons d-flex align-items-center mb-3 mb-md-auto text-center justify-content-center justify-content-md-end p-0">
       <a href="https://www.instagram.com/performers.show/" target="blank"><i class="fab fa-instagram text-center"></i></a>
       <a href="https://www.facebook.com/performers.show/" target="blank"><i class="fab fa-facebook text-center"></i></a>
       <a href="https://www.youtube.com/channel/UChsk3zsoyWMMtJCYW8o-E2g/featured" target="blank"><i class="fab fa-youtube text-center"></i></i></a>
       <a href="https://www.linkedin.com/company/performers-show/" target="blank"><i class="fab fa-linkedin text-center"></i></a>
-    </div>
-    <div class="container footer-icons d-flex flex-column justify-content-center mb-3 mb-md-auto">
-      <p class="text-md-right fs-6"><i class="fas fa-mobile-alt mr-1"></i> +54 341 3385351</p>
-      <p class="text-md-right fs-6"><i class="far fa-envelope mr-1"></i> performers.show@gmail.com</p>
-      <p class="text-md-right fs-6"><i class="fas fa-globe-americas mr-1"></i> Rosario, Argentina</p>
     </div>
   </div>
 </div>
