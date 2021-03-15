@@ -1,7 +1,7 @@
-<div class="navbar navbar-per navbar-expand-sm">
-  <div class="container">
-    <%= link_to "/", class: "navbar-brand" do %>
-      <%= image_tag "logo-name2.png" %>
+<div class="navbar navbar-per navbar-expand-sm p-0 mt-2">
+  <div class="container p-0">
+    <%= link_to "/", class: "navbar-brand p-0 m-0" do %>
+      <%= image_tag "logo-name2.png", id: "nav-logo" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,19 +11,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto align-items-center">
         <li class="nav-item active">
-          <%= link_to "Inicio", "/home2", class: "nav-link text-white font-weight-bold ml-2" %>
+          <%= link_to "Shows", "/", class: "nav-link text-white font-weight-bold ml-2" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Nosotros", "/us", class: "nav-link text-white font-weight-bold ml-2" %>
+          <%= link_to "Soy Artista", "/", class: "nav-link text-white font-weight-bold ml-2" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Shows", "/home2", class: "nav-link text-white font-weight-bold ml-2" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Soy Artista", "/home2", class: "nav-link text-white font-weight-bold ml-2" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Ingresar", "/home2", class: "button btn-orange px-3 py-1 font-weight-lighter border-0 ml-2" %>
+          <%= link_to "Ingresar", "/home2", class: "button btn-orange px-3 py-1 border-0 rounded-lg font-weight-bold rounded-pill ml-2" %>
         </li>
         <!-- <li class="nav-item dropdown">
           <%= link_to "#", class: "nav-link dropdown-toggle text-white font-weight-bold",  id: "navbarDropdown", role: "button", data: { toggle: "dropdown"}, 'aria-haspopup': true, 'aria-expanded': false do %>
