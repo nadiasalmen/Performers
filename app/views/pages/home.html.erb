@@ -1,22 +1,12 @@
-<div class="container-fluid bg-dark mt-3 opacity-70" style="min-height: 2vh;">
- <p class="text-center m-0">¿Querés publicar tu show? Hacé <%= link_to "click acá", "/", class: "orange-link" %> .</p>
-</div>
-<div class="container p-0 mb-5" style="height: 88vh;">
+<div class="container-fluid p-0 mb-5" style="height: 100vh; background-position: center; background-image: linear-gradient(to top, rgba(0,0,0,0.8), rgba(255,255,255,0)), url('<%= image_path 'landing-background.png' %>');">
   <div class="row h-100">
-    <div class="container col-md-7 m-auto p-0">
-      <h1 class="font-weight-bold m-0">Contratá artistas de <br/> manera rápida y segura.</h1>
+    <div class="container col-md-6 m-auto p-0">
+      <h1 class="font-weight-bold m-0">Encontrá artistas de <br/> manera rápida y segura.</h1>
       <div class="row">
-        <div class="col-12 col-md-7">
-          <p>Ponemos experiencias únicas al alcance, conectando artistas con eventos. </p>
+        <div class="col-12 col-md-6">
+          <input id="generalSearchBar" type="text" name="generalSearchBar" placeholder="¿Qué estás buscando?" class="px-2 py-1 bg-dark border-0 rounded-lg w-100 text-center text-lg-left rounded-pill">
         </div>
       </div>
-      <div class="w-100 d-flex my-4 m-0" >
-        <%= link_to "Descubrir Shows", "/", class: "button btn-orange px-3 py-2 border-0 mr-2 font-weight-bold rounded-pill" %>
-        <%= link_to "Soy Artista", "/", class: "button btn-transparent px-3 py-2 border-0 ml-2" %>
-      </div>
-    </div>
-    <div class="container col-5 d-none d-md-block m-auto p-0">
-      <%= image_tag "landing-beto-deg.jpg", class: "w-100 d-none d-md-block"%>
     </div>
   </div>
 </div>
