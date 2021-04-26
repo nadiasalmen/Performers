@@ -6,3 +6,7 @@ input:focus {
 input::placeholder {
   color: white;
 }
+
+.input-filter {
+  filter: drop-shadow(10px 10px 20px black);
+}
