@@ -1,27 +1,26 @@
-.btn-transparent {
-  background-color: transparent;
-  border: none;
+.btn-orange {
+  background-color: #ff652e;
   color: white;
+  border-radius: 8px;
 }
 
-.btn-transparent:focus {
-  outline: none;
-}
-
-.btn-transparent:hover {
+.btn-orange:hover {
   text-decoration: none;
   opacity: 0.8;
   color: white;
 }
 
-.btn-orange {
+.btn-transparent-grey {
+  background-color: rgba(255,255,255,0.2);
   color: white;
-  background-color: #ff652e;
-  font-weight: bold;
   border-radius: 8px;
 }
 
-.btn-orange:hover {
+.btn-transparent-grey:focus {
+  outline: none;
+}
+
+.btn-transparent-grey:hover {
   text-decoration: none;
   opacity: 0.8;
   color: white;

@@ -1,10 +1,12 @@
-<div class="container-fluid p-0 mb-5" style="height: 100vh; background-position: center; background-image: linear-gradient(to top, rgba(0,0,0,0.7), transparent), url('<%= image_path 'landing-background.png' %>');">
+<div class="container-fluid p-0 mb-5" style="height: 100vh; object-fit: cover; background-position: center; background-image: url('<%= image_path 'landing-background.png' %>'); -webkit-mask-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 35.98%, rgba(0, 0, 0, 0.83) 58.58%, #000000 83.26%, #000000 100%);">
   <div class="row h-100">
-    <div class="container col-md-6 m-auto p-0">
-      <h1 class="font-weight-bold m-0">Encontrá artistas de <br/> manera rápida y segura.</h1>
-      <div class="row">
-        <div class="col-12 col-md-6">
-          <input id="generalSearchBar" type="text" name="generalSearchBar" placeholder="¿Qué estás buscando?" class="px-2 py-1 bg-dark border-0 rounded-lg w-100 text-center text-lg-left rounded-pill">
+    <div class="container col-10 col-md-8 m-auto p-0">
+      <div class="col-10 col-md-8 m-auto p-0">
+        <h1 class="font-weight-bold m-auto p-0 text-shadow-40">Encontrá artistas de <br/> manera rápida y segura.</h1>
+      </div>
+      <div class="row m-auto p-0">
+        <div class="col-10 col-md-8 m-auto p-0">
+          <input id="generalSearchBar" type="text" name="generalSearchBar" placeholder="¿Qué estás buscando?" class="button btn-transparent-grey px-4 py-2 border-0 rounded-lg rounded-pill font-weight-light text-lg-left w-100 my-4 fs-25 input-filter box-shadow-20 text-shadow-40">
         </div>
       </div>
     </div>
