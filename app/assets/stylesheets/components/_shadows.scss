@@ -1,0 +1,21 @@
+// Filters & Shadows
+
+.text-shadow-40 {
+  text-shadow: 0px 0px 40px #000000;
+}
+
+.box-shadow-20 {
+  box-shadow: 2px 2px 30px black;
+  backdrop-filter: blur(10px) brightness(110%);
+  background-color: #9e9e9ea1;
+}
+
+
+// .input-filter {
+    // backdrop-filter: blur(10px) brightness(110%);
+//   filter: drop-shadow(10px 10px 20px black);
+// }
+
+// -webkit-backdrop-filter: blur(6px) brightness(115%);
+//    35    align-items: flex-end;
+//    36    backdrop-filter: blur(6px) brightness(115%);
