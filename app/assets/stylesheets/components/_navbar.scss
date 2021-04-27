@@ -2,8 +2,9 @@
 .navbar-per {
   display: flex;
   justify-content: space-between;
-  background: linear-gradient(to bottom, #000000c4, black);
-  box-shadow: inset 0px 0px 40px 40px #0a0a0a7a;
+  background-color: transparent;
+  transition: 0.5s background-color ease;
+  background: linear-gradient(180deg, #000000 0%, rgba(128, 128, 128, 0) 100%);
 }
 
 .navbar-per .navbar-collapse {
@@ -13,3 +14,11 @@
 #nav-logo {
   height: 54px;
 }
+
+.navbar-per-black {
+  background-color: black;
+  background: linear-gradient(to bottom, #000000c4, black);
+}
+
+
+// box-shadow: inset 0px 20px 20px 20px rgba(0, 0, 0, 0.83);
