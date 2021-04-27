@@ -7,6 +7,17 @@ input::placeholder {
   color: white;
 }
 
-.input-filter {
-  filter: drop-shadow(10px 10px 20px black);
+#generalSearchBar {
+  text-shadow: 1px 1px 10px #000,
+              50px 50px 50px #000,
+              100px 100px 100px #000;
+}
+
+#generalSearchBar:focus-visible {
+  border: 0;
+  outline: none;
+}
+
+#generalSearchBar::placeholder {
+  border: 0;
 }
