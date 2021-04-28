@@ -26,6 +26,10 @@ p {
   font-size: 25px;
 }
 
+.fs-90 {
+  font-size: 90px;
+}
+
 // Opacity
 
 .opacity-70 {
@@ -46,4 +50,18 @@ p {
 
 .vertical-align-middle {
   vertical-align: middle;
+}
+
+// Colors
+
+.light-grey-font {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.orange-font {
+  color: #ff652e;
+}
+
+.orange-border {
+  border: 2px solid #ff652e;
 }
