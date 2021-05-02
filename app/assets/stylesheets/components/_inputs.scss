@@ -1,23 +1,21 @@
+input {
+  color: white;
+}
+
 input:focus {
   border: 0;
-  outline-color: #ff652e;
+  outline: none;
+  color: white;
 }
 
 input::placeholder {
   color: white;
 }
 
-#generalSearchBar {
-  text-shadow: 1px 1px 10px #000,
-              25px 25px 25px #000,
-              50px 50px 50px #000,
-              75px 75px 75px #000,
-              100px 100px 100px #000;
-}
-
-#generalSearchBar:focus-visible {
+#generalSearchBar:focus {
   border: 0;
   outline: none;
+  color: white;
 }
 
 #generalSearchBar::placeholder {
