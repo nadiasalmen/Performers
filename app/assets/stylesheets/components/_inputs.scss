@@ -1,3 +1,17 @@
+@media (max-width: 767px) {
+  /* For a screen < 767px, this CSS will be read */
+  #generalSearchBar {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  /* For a screen > 768px, this CSS will be read */
+  #generalSearchBar {
+    font-size: 28px;
+  }
+}
+
 input {
   color: white;
 }
