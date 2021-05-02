@@ -1,28 +1,38 @@
-<div class="container-fluid p-0 mb-5" style="height: 100vh; background-size: cover; object-fit: cover; background-position: center; background-image: url('<%= image_path 'landing-background.png' %>'); -webkit-mask-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0.83) 40%, #000000 60%, #000000 100%);">
-  <div class="row height-fill">
-    <div class="container m-auto p-0">
+<div class="container-fluid p-0 mb-md-5" id="landing-background">
+  <div class="d-flex height-fill flex-column flex-md-row">
+    <div class="container m-auto">
       <div class="col-10 col-md-8 m-auto pb-3 px-0">
-        <h1 class="font-weight-bold m-auto p-0 text-shadow-40">Encontrá artistas de <br/> manera rápida y segura.</h1>
+        <h1 class="font-weight-bold m-auto p-0 text-shadow-40" id="landing-main-text">Contratá artistas <br/><span id="landing-secondary-text">de manera rápida y segura.</span></h1>
       </div>
-      <div class="row col-10 col-md-8 rounded-lg rounded-pill box-shadow-20 align-items-center justify-content-around m-auto p-0">
+      <div class="d-flex col-10 col-md-8 rounded-lg rounded-pill box-shadow-20 align-items-center justify-content-around m-auto pr-0 pl-3 p-md-0">
         <div class="flex-grow-1">
-          <input id="generalSearchBar" type="text" name="generalSearchBar" placeholder="¿Qué estás buscando?" class="ml-3 bg-transparent border-0 font-weight-light text-left w-100 my-2 fs-25">
+          <input id="generalSearchBar" type="text" name="generalSearchBar" placeholder="¿Qué estás buscando?" class="ml-md-3 bg-transparent border-0 font-weight-light text-left w-100">
         </div>
-        <div class="">
-          <%= image_tag "search-icon.png", class: "mr-2 search-icon height-80" %>
+        <div class="m-1">
+          <%= link_to "/" do %>
+            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45">
+              <g id="Group_2250" data-name="Group 2250" transform="translate(0.641 0.974)">
+                <circle id="Ellipse_8" data-name="Ellipse 8" cx="22.5" cy="22.5" r="22.5" transform="translate(-0.641 -0.974)" fill="#fd7545"/>
+                <path id="Icon" d="M18.873,19.574a.714.714,0,0,1-.5-.207l-5.833-5.66a7.948,7.948,0,0,1-4.7,1.516A7.74,7.74,0,0,1,0,7.611,7.74,7.74,0,0,1,7.845,0,7.74,7.74,0,0,1,15.69,7.611,7.476,7.476,0,0,1,13.6,12.778l5.775,5.614a.695.695,0,0,1-.5,1.183ZM7.845,1.377A6.339,6.339,0,0,0,1.42,7.611a6.339,6.339,0,0,0,6.425,6.234,6.484,6.484,0,0,0,4.544-1.825A6.1,6.1,0,0,0,14.27,7.611,6.339,6.339,0,0,0,7.845,1.377Z" transform="translate(11.714 12.711)" fill="#fff" stroke="#fff" stroke-width="1"/>
+              </g>
+            </svg>
+          <% end %>
         </div>
       </div>
     </div>
+    <div class="container d-flex d-md-none mx-auto my-3 justify-content-center">
+      <%= link_to "Shows", "/", class: "button btn-orange px-4 py-1 border-0 rounded-lg rounded-pill ml-2 fs-20 font-weight-light" %>
+    </div>
   </div>
 </div>
-<div class="container">
+<div class="container d-none d-md-block">
   <div class="d-flex justify-content-around py-5">
     <div class="d-flex pr-5">
       <h1 class="light-grey-font fs-90 m-0">1</h1>
       <div class="d-flex my-3">
         <div class="mx-2 orange-border"></div>
         <div>
-          <p class="m-0 orange-font">Personalizá tu búsqueda</p>
+          <p class="m-0 orange-font">Contanos qué buscás</p>
           <p class="m-0">Describí el tipo de show que buscás y contanos sobre el evento que estás organizando.</p>
         </div>
       </div>
@@ -42,8 +52,8 @@
       <div class="d-flex my-3">
         <div class="mx-2 orange-border"></div>
         <div>
-          <p class="m-0 orange-font">Personaliza tu búsqueda</p>
-          <p class="m-0">Conocé el perfil de cada uno y encontrá el mejor para tu evento.</p>
+          <p class="m-0 orange-font">Interactuá con los artistas</p>
+          <p class="m-0">Investigá el perfil de cada artista y contratalos para que sean parte de tu evento.</p>
         </div>
       </div>
     </div>

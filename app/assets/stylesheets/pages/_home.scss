@@ -22,10 +22,6 @@ p {
   font-size: 20px;
 }
 
-.fs-25 {
-  font-size: 25px;
-}
-
 .fs-90 {
   font-size: 90px;
 }
@@ -52,6 +48,12 @@ p {
   vertical-align: middle;
 }
 
+// Lists
+
+.list-style-none {
+  list-style: none;
+}
+
 // Colors
 
 .light-grey-font {
@@ -64,4 +66,36 @@ p {
 
 .orange-border {
   border: 2px solid #ff652e;
+}
+
+// Background
+
+@media (max-width: 767px) {
+  /* For a screen < 767px, this CSS will be read */
+  #landing-background {
+    height: 100vh;
+    background-image: url('landing-background-mask.png'), linear-gradient(0deg, rgba(0, 0, 0, 0.12) 20%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0.5) 60%, #0000006b 80%, #000000 100%);
+    background-size: cover;
+    background-position: center;
+  }
+
+  #landing-main-text {
+    font-size: 28px;
+    font-weight: 700;
+  }
+
+  #landing-secondary-text {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  /* For a screen > 768px, this CSS will be read */
+  #landing-background {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-image: url('landing-background.png');
+    -webkit-mask-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0.83) 40%, #000000 60%, #000000 100%)
+  }
 }
