@@ -1,14 +1,14 @@
 @media (max-width: 767px) {
   /* For a screen < 767px, this CSS will be read */
   #generalSearchBar {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 }
 
 @media (min-width: 768px) {
   /* For a screen > 768px, this CSS will be read */
   #generalSearchBar {
-    font-size: 28px;
+    font-size: 2rem;
   }
 }
 

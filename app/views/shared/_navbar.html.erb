@@ -1,14 +1,9 @@
-<div class="navbar fixed-top navbar-per navbar-expand-sm py-3 px-0">
-  <div class="container p-0 m-auto d-flex justify-content-center justify-content-md-between">
+<div class="fixed-top navbar-per navbar-expand-sm py-3 px-0">
+  <div class="container p-0 m-auto navbar-per-container">
     <%= link_to "/", class: "navbar-brand p-0 m-0" do %>
       <%= image_tag "logo_name.png", id: "nav-logo" %>
     <% end %>
-
-    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon text-white font-weight-bold d-inline"><i class="fas fa-bars"></i></i></span>
-    </button> -->
-
-    <div class="collapse navbar-collapse d-none d-md-block" id="navbarSupportedContent">
+    <div class="buttons-nav-bar-md">
       <ul class="navbar-nav mr-auto align-items-center">
         <li class="nav-item">
           <%= link_to "Ingresá", "/coming_soon", class: "button btn-transparent-grey px-4 py-1 border-0 rounded-lg rounded-pill ml-2 fs-20 font-weight-light" %>
@@ -18,7 +13,7 @@
         </li>
       </ul>
     </div>
-    <div class="d-md-none my-3">
+    <div class="buttons-nav-bar-sm my-3">
       <ul class="d-flex justify-content-center align-items-center m-auto p-0 list-style-none">
         <li class="nav-item">
           <%= link_to "Ingresá", "/coming_soon", class: "button btn-transparent-grey px-4 py-1 border-0 rounded-lg rounded-pill ml-2 fs-20 font-weight-light" %>
