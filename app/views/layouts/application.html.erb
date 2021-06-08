@@ -16,6 +16,8 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+    <%= image_tag "landing-background-mask.png", class: "d-none"%>
+    <%= image_tag "landing-background.png", class: "d-none"%>
     <%= yield %>
     <%= render 'shared/footer' %>
   </body>
