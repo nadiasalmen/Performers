@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_12_203446) do
+ActiveRecord::Schema.define(version: 2021_06_10_010114) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,10 @@ ActiveRecord::Schema.define(version: 2021_03_12_203446) do
     t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.bigint "show_id", null: false
+    t.index ["show_id"], name: "index_enquiries_on_show_id"
+    t.index ["user_id"], name: "index_enquiries_on_user_id"
   end
 
   create_table "event_categories", force: :cascade do |t|
@@ -45,6 +49,8 @@ ActiveRecord::Schema.define(version: 2021_03_12_203446) do
     t.string "answer"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "show_id", null: false
+    t.index ["show_id"], name: "index_faqs_on_show_id"
   end
 
   create_table "genres", force: :cascade do |t|
@@ -61,6 +67,10 @@ ActiveRecord::Schema.define(version: 2021_03_12_203446) do
     t.string "answer"
     t.string "status"
     t.float "stars"
+    t.bigint "user_id", null: false
+    t.bigint "show_id", null: false
+    t.index ["show_id"], name: "index_reviews_on_show_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "show_categories", force: :cascade do |t|
@@ -70,12 +80,34 @@ ActiveRecord::Schema.define(version: 2021_03_12_203446) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "show_event_categories", force: :cascade do |t|
+    t.bigint "event_category_id", null: false
+    t.bigint "show_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_category_id"], name: "index_show_event_categories_on_event_category_id"
+    t.index ["show_id"], name: "index_show_event_categories_on_show_id"
+  end
+
+  create_table "show_genres", force: :cascade do |t|
+    t.bigint "genre_id", null: false
+    t.bigint "show_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["genre_id"], name: "index_show_genres_on_genre_id"
+    t.index ["show_id"], name: "index_show_genres_on_show_id"
+  end
+
   create_table "shows", force: :cascade do |t|
     t.string "name"
     t.string "description"
     t.float "minimum_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.bigint "show_category_id", null: false
+    t.index ["show_category_id"], name: "index_shows_on_show_category_id"
+    t.index ["user_id"], name: "index_shows_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -94,4 +126,24 @@ ActiveRecord::Schema.define(version: 2021_03_12_203446) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "youtube_videos", force: :cascade do |t|
+    t.string "video_url"
+    t.bigint "show_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["show_id"], name: "index_youtube_videos_on_show_id"
+  end
+
+  add_foreign_key "enquiries", "shows"
+  add_foreign_key "enquiries", "users"
+  add_foreign_key "faqs", "shows"
+  add_foreign_key "reviews", "shows"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "show_event_categories", "event_categories"
+  add_foreign_key "show_event_categories", "shows"
+  add_foreign_key "show_genres", "genres"
+  add_foreign_key "show_genres", "shows"
+  add_foreign_key "shows", "show_categories"
+  add_foreign_key "shows", "users"
+  add_foreign_key "youtube_videos", "shows"
 end
