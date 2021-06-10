@@ -1,3 +1,3 @@
 class EventCategory < ApplicationRecord
-  has_many: :event_show_categories
+  has_many: :show_event_categories
 end
