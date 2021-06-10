@@ -1,6 +1,8 @@
 class Review < ApplicationRecord
-  belongs_to :user
+  # associations
   belongs_to :show
+  belongs_to :user
 
+  # validations
   validates :content, presence: true
 end
