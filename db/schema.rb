@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_10_003537) do
+ActiveRecord::Schema.define(version: 2021_06_10_004107) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,6 +87,10 @@ ActiveRecord::Schema.define(version: 2021_06_10_003537) do
     t.float "minimum_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.bigint "show_category_id", null: false
+    t.index ["show_category_id"], name: "index_shows_on_show_category_id"
+    t.index ["user_id"], name: "index_shows_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -108,4 +112,6 @@ ActiveRecord::Schema.define(version: 2021_06_10_003537) do
   add_foreign_key "reviews", "users"
   add_foreign_key "show_event_categories", "event_categories"
   add_foreign_key "show_event_categories", "shows"
+  add_foreign_key "shows", "show_categories"
+  add_foreign_key "shows", "users"
 end
