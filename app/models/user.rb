@@ -8,4 +8,7 @@ class User < ApplicationRecord
   has_many :enquiries
   has_many :reviews
   has_many :shows
+
+  # active storage associations
+  has_one_attached :avatar
 end
