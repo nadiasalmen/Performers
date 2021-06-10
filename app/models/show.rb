@@ -10,4 +10,8 @@ class Show < ApplicationRecord
   has_many :show_event_categories
   has_many :show_genres
   has_many :youtube_videos
+
+  # active storage associations
+  has_many_attached :images
+  has_many_attached :videos
 end
