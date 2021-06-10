@@ -6,4 +6,5 @@ class Show < ApplicationRecord
   has_many :faqs
   has_many :show_event_categories
   has_many :show_genres
+  has_many :youtube_videos
 end
