@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_10_004912) do
+ActiveRecord::Schema.define(version: 2021_06_10_005739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,8 @@ ActiveRecord::Schema.define(version: 2021_06_10_004912) do
     t.string "answer"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "show_id", null: false
+    t.index ["show_id"], name: "index_faqs_on_show_id"
   end
 
   create_table "genres", force: :cascade do |t|
@@ -87,6 +89,15 @@ ActiveRecord::Schema.define(version: 2021_06_10_004912) do
     t.index ["show_id"], name: "index_show_event_categories_on_show_id"
   end
 
+  create_table "show_genres", force: :cascade do |t|
+    t.bigint "genre_id", null: false
+    t.bigint "show_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["genre_id"], name: "index_show_genres_on_genre_id"
+    t.index ["show_id"], name: "index_show_genres_on_show_id"
+  end
+
   create_table "shows", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -117,10 +128,13 @@ ActiveRecord::Schema.define(version: 2021_06_10_004912) do
 
   add_foreign_key "enquiries", "shows"
   add_foreign_key "enquiries", "users"
+  add_foreign_key "faqs", "shows"
   add_foreign_key "reviews", "shows"
   add_foreign_key "reviews", "users"
   add_foreign_key "show_event_categories", "event_categories"
   add_foreign_key "show_event_categories", "shows"
+  add_foreign_key "show_genres", "genres"
+  add_foreign_key "show_genres", "shows"
   add_foreign_key "shows", "show_categories"
   add_foreign_key "shows", "users"
 end
