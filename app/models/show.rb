@@ -3,5 +3,7 @@ class Show < ApplicationRecord
   has_one :category
   has_many :enquiries
   has_many :reviews
+  has_many :faqs
   has_many :show_event_categories
+  has_many :show_genres
 end
