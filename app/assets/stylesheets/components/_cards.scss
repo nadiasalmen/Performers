@@ -1,32 +1,44 @@
-.card-container {
-  perspective: 700px;
-  display: grid;
+.card-category {
+  background-size: cover;
+  background-position: center;
+  width: 18rem;
+  margin-right: 2rem;
+  height: 16rem;
+  display: flex;
 }
 
-.card-flip {
-  display: grid; grid-template: 1fr / 1fr;
-  grid-template-areas: "frontAndBack";
+.card-info {
+  flex-direction:column;
+  align-self: flex-end;
+}
+.card-title {
+  font-weight: bold;
+  font-size: 2rem;
 }
 
-.card-flip, .card-container {
-  transform-style: preserve-3d;
-  transition: all 0.7s ease;
+.pill-button {
+  font-size: 0.7rem;
+  border-radius: 50rem;
+  padding: 0.1rem 0.5rem;
+  background-color: rgba(233, 232, 232, 0.5);
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+  color: white;
 }
 
-.card-flip div {
-  backface-visibility: hidden;
-  transform-style: preserve-3d;
+.stars-rating {
+  justify-content: flex-end;
+}
+.card-pills-and-rating {
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.card-container:hover .card-flip {
-  transform: rotateY(180deg);
+.fa-star {
+  color: #ff652e;
 }
 
-.front {
-  grid-area: frontAndBack;
-}
-
-.back {
-  grid-area: frontAndBack;
-  transform: rotateY(-180deg);
+.fa-star-half-alt {
+  color: #ff652e;
 }

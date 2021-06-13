@@ -1,0 +1,83 @@
+.card-slider-container {
+	width: 90%;
+	margin: auto;
+}
+
+/* ---- ----- ----- Contenedor Titulo y Controles ----- ----- ----- */
+.principal-slider-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+}
+
+.principal-slider-container h3 {
+	color: #fff;
+	font-size: 30px;
+  font-weight: bold;
+}
+
+/* ---- ----- ----- Contenedor Principal y Flechas ----- ----- ----- */
+.card-slider {
+	margin-bottom: 70px;
+}
+
+
+/* ---- ----- ----- Carousel ----- ----- ----- */
+.card-slider .carousel-container {
+	width: 100%;
+	padding: 20px 0;
+	overflow: hidden;
+	scroll-behavior: smooth;
+}
+.carousel-container {
+  mask-image: linear-gradient(to left, transparent 1%, black 20%)
+}
+
+.card-slider .carousel-container .carousel {
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.card-slider .carousel-container .carousel .card-category {
+	min-width: 31%;
+	transition: .3s ease all;
+	box-shadow: 5px 5px 10px rgba(0,0,0, .3);
+}
+
+
+/* ---- ----- ----- Media Queries ----- ----- ----- */
+@media screen and (max-width: 800px) {
+	header .logotipo {
+		margin-bottom: 10px;
+		font-size: 30px;
+	}
+
+	header .contenedor {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.pelicula-principal {
+		font-size: 14px;
+	}
+
+	.pelicula-principal .descripcion {
+		max-width: 100%;
+	}
+
+	.card-slider .carousel-container {
+		overflow: visible;
+	}
+
+	.card-slider .carousel-container .carousel {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 20px;
+	}
+
+	.card-slider .indicadores,
+	.card-slider .flecha-izquierda,
+	.card-slider .flecha-derecha {
+		display: none;
+	}
+}
