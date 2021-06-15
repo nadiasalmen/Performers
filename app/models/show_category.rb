@@ -1,10 +1,10 @@
 class ShowCategory < ApplicationRecord
-  # associations
-  belongs_to :show
-
   # active storage associations
   has_one_attached :image
 
-  #validations
+  # validations
+  validates :name, inclusion: { in: ['Acústico', 'Magia', 'Banda', 'Infantil', 'Amenización', 'Baile', 'DJ', 'Animación', 'Stand Up', 'Otros'] }
   validates :name, presence: true
+  validates :name, uniqueness: true
+  validates :description, presence: true
 end
