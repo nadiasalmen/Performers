@@ -1,9 +1,12 @@
-puts 'Cleaning database...'
+puts 'CLEANING DATABASE'
+puts 'Deleting tags'
+Tag.destroy_all
+puts 'Deleting show_categories'
 ShowCategory.destroy_all
+puts 'Deleting event_categories'
 EventCategory.destroy_all
 
-
-puts 'Creating event categories'
+puts 'CREATING EVENT CATEGORIES'
 puts 'Creating event_category: Bar - Restó'
 event_category = EventCategory.new(
   name: 'Bar - Restó',
@@ -44,7 +47,7 @@ event_category = EventCategory.new(
 event_category.image.attach(io: File.open('app/assets/images/ec_otros.png'), filename: "#{event_category.name}.png", content_type: 'image/png')
 event_category.save!
 
-puts 'Creating show categories'
+puts 'CREATING SHOW CATEGORIES'
 puts 'Creating show_category: Acústico'
 show_category = ShowCategory.new(
   name: 'Acústico',
@@ -124,3 +127,7 @@ show_category = ShowCategory.new(
 )
 show_category.image.attach(io: File.open('app/assets/images/sc_otros.png'), filename: "#{show_category.name}.png", content_type: 'image/png')
 show_category.save!
+
+puts 'CREATING TAGS'
+TAGS = ['Tango', 'Tango Electrónico', 'Tango Fusión', 'Magia', 'Ilusión', 'Asombro', 'Intrépido', 'Atrevido', 'Diferente', 'House', 'Rock', 'Indie', 'Rap', 'Energía', 'Baile', 'Comedia', 'Entretenimiento', 'Show humorístico', 'Standup']
+TAGS.each { |tag_name| Tag.new(name: tag_name) }
