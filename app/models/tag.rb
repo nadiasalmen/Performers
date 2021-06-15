@@ -1,4 +1,4 @@
-class Genre < ApplicationRecord
+class Tag < ApplicationRecord
   # associations
   has_many :show_genres
 
