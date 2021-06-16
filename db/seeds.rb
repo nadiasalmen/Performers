@@ -1,4 +1,8 @@
+require "open-uri"
+
 puts 'CLEANING DATABASE'
+puts 'Deleting shows'
+Show.destroy_all
 puts 'Deleting users'
 User.destroy_all
 puts 'Deleting tags'
@@ -14,7 +18,7 @@ event_category = EventCategory.new(
   name: 'Bar - Restó',
   description: 'Eventos públicos o privados en bares y restaurants'
 )
-event_category.image.attach(io: File.open('app/assets/images/ec_bar.png'), filename: "#{event_category.name}.png", content_type: 'image/png')
+event_category.image.attach(io: File.open('app/assets/images/seeds_event_categories/ec_bar.png'), filename: "#{event_category.name}.png", content_type: 'image/png')
 event_category.save!
 
 puts 'Creating event_category: Social'
@@ -22,7 +26,7 @@ event_category = EventCategory.new(
   name: 'Social',
   description: 'Eventos sociales públicos o privados'
 )
-event_category.image.attach(io: File.open('app/assets/images/ec_social.png'), filename: "#{event_category.name}.png", content_type: 'image/png')
+event_category.image.attach(io: File.open('app/assets/images/seeds_event_categories/ec_social.png'), filename: "#{event_category.name}.png", content_type: 'image/png')
 event_category.save!
 
 puts 'Creating event_category: Corporativo'
@@ -30,7 +34,7 @@ event_category = EventCategory.new(
   name: 'Corporativo',
   description: 'Eventos corporativos privados'
 )
-event_category.image.attach(io: File.open('app/assets/images/ec_corporativo.png'), filename: "#{event_category.name}.png", content_type: 'image/png')
+event_category.image.attach(io: File.open('app/assets/images/seeds_event_categories/ec_corporativo.png'), filename: "#{event_category.name}.png", content_type: 'image/png')
 event_category.save!
 
 puts 'Creating event_category: Evento Cultural'
@@ -38,7 +42,7 @@ event_category = EventCategory.new(
   name: 'Evento Cultural',
   description: 'Eventos culturales'
 )
-event_category.image.attach(io: File.open('app/assets/images/ec_teatro.png'), filename: "#{event_category.name}.png", content_type: 'image/png')
+event_category.image.attach(io: File.open('app/assets/images/seeds_event_categories/ec_teatro.png'), filename: "#{event_category.name}.png", content_type: 'image/png')
 event_category.save!
 
 puts 'Creating event_category: Otros'
@@ -46,7 +50,7 @@ event_category = EventCategory.new(
   name: 'Otros',
   description: 'Otros eventos'
 )
-event_category.image.attach(io: File.open('app/assets/images/ec_otros.png'), filename: "#{event_category.name}.png", content_type: 'image/png')
+event_category.image.attach(io: File.open('app/assets/images/seeds_event_categories/ec_otros.png'), filename: "#{event_category.name}.png", content_type: 'image/png')
 event_category.save!
 
 puts 'CREATING SHOW CATEGORIES'
@@ -55,7 +59,7 @@ show_category = ShowCategory.new(
   name: 'Acústico',
   description: 'Shows acústicos'
 )
-show_category.image.attach(io: File.open('app/assets/images/sc_acustico.png'), filename: "#{show_category.name}.png", content_type: 'image/png')
+show_category.image.attach(io: File.open('app/assets/images/seeds_show_categories/sc_acustico.png'), filename: "#{show_category.name}.png", content_type: 'image/png')
 show_category.save!
 
 puts 'Creating show_category: Magia'
@@ -63,7 +67,7 @@ show_category = ShowCategory.new(
   name: 'Magia',
   description: 'Shows de magia'
 )
-show_category.image.attach(io: File.open('app/assets/images/sc_magia.png'), filename: "#{show_category.name}.png", content_type: 'image/png')
+show_category.image.attach(io: File.open('app/assets/images/seeds_show_categories/sc_magia.png'), filename: "#{show_category.name}.png", content_type: 'image/png')
 show_category.save!
 
 puts 'Creating show_category: Banda'
@@ -71,7 +75,7 @@ show_category = ShowCategory.new(
   name: 'Banda',
   description: 'Shows de bandas musicales'
 )
-show_category.image.attach(io: File.open('app/assets/images/sc_banda.png'), filename: "#{show_category.name}.png", content_type: 'image/png')
+show_category.image.attach(io: File.open('app/assets/images/seeds_show_categories/sc_banda.png'), filename: "#{show_category.name}.png", content_type: 'image/png')
 show_category.save!
 
 puts 'Creating show_category: Infantil'
@@ -79,7 +83,7 @@ show_category = ShowCategory.new(
   name: 'Infantil',
   description: 'Shows infantil'
 )
-show_category.image.attach(io: File.open('app/assets/images/sc_infantil.png'), filename: "#{show_category.name}.png", content_type: 'image/png')
+show_category.image.attach(io: File.open('app/assets/images/seeds_show_categories/sc_infantil.png'), filename: "#{show_category.name}.png", content_type: 'image/png')
 show_category.save!
 
 puts 'Creating show_category: Amenización'
@@ -87,7 +91,7 @@ show_category = ShowCategory.new(
   name: 'Amenización',
   description: 'Amenizaciones'
 )
-show_category.image.attach(io: File.open('app/assets/images/sc_amenizacion.png'), filename: "#{show_category.name}.png", content_type: 'image/png')
+show_category.image.attach(io: File.open('app/assets/images/seeds_show_categories/sc_amenizacion.png'), filename: "#{show_category.name}.png", content_type: 'image/png')
 show_category.save!
 
 puts 'Creating show_category: Baile'
@@ -95,7 +99,7 @@ show_category = ShowCategory.new(
   name: 'Baile',
   description: 'Shows de baile'
 )
-show_category.image.attach(io: File.open('app/assets/images/sc_baile.png'), filename: "#{show_category.name}.png", content_type: 'image/png')
+show_category.image.attach(io: File.open('app/assets/images/seeds_show_categories/sc_baile.png'), filename: "#{show_category.name}.png", content_type: 'image/png')
 show_category.save!
 
 puts 'Creating show_category: DJ'
@@ -103,7 +107,7 @@ show_category = ShowCategory.new(
   name: 'DJ',
   description: 'DJs'
 )
-show_category.image.attach(io: File.open('app/assets/images/sc_dj.png'), filename: "#{show_category.name}.png", content_type: 'image/png')
+show_category.image.attach(io: File.open('app/assets/images/seeds_show_categories/sc_dj.png'), filename: "#{show_category.name}.png", content_type: 'image/png')
 show_category.save!
 
 puts 'Creating show_category: Animación'
@@ -111,7 +115,7 @@ show_category = ShowCategory.new(
   name: 'Animación',
   description: 'Animaciones'
 )
-show_category.image.attach(io: File.open('app/assets/images/sc_animacion.png'), filename: "#{show_category.name}.png", content_type: 'image/png')
+show_category.image.attach(io: File.open('app/assets/images/seeds_show_categories/sc_animacion.png'), filename: "#{show_category.name}.png", content_type: 'image/png')
 show_category.save!
 
 puts 'Creating show_category: Stand Up'
@@ -119,7 +123,7 @@ show_category = ShowCategory.new(
   name: 'Stand Up',
   description: 'Shows de stand up'
 )
-show_category.image.attach(io: File.open('app/assets/images/sc_standup.png'), filename: "#{show_category.name}.png", content_type: 'image/png')
+show_category.image.attach(io: File.open('app/assets/images/seeds_show_categories/sc_standup.png'), filename: "#{show_category.name}.png", content_type: 'image/png')
 show_category.save!
 
 puts 'Creating show_category: Otros'
@@ -127,14 +131,14 @@ show_category = ShowCategory.new(
   name: 'Otros',
   description: 'Otros tipos de shows'
 )
-show_category.image.attach(io: File.open('app/assets/images/sc_otros.png'), filename: "#{show_category.name}.png", content_type: 'image/png')
+show_category.image.attach(io: File.open('app/assets/images/seeds_show_categories/sc_otros.png'), filename: "#{show_category.name}.png", content_type: 'image/png')
 show_category.save!
 
 puts 'CREATING TAGS'
 TAGS = ['Tango', 'Tango Electrónico', 'Tango Fusión', 'Magia', 'Ilusión', 'Asombro', 'Intrépido', 'Atrevido', 'Diferente', 'House', 'Rock', 'Indie', 'Rap', 'Energía', 'Baile', 'Comedia', 'Entretenimiento', 'Show humorístico', 'Standup']
 TAGS.each { |tag_name| Tag.new(name: tag_name) }
 
-puts 'CREATING USERS'
+puts 'CREATING USERS & SHOWS'
 puts 'Creating user: Gato Maula Project'
 user = User.new(
   email: 'gatomaulaproject@gmail.com',
@@ -146,6 +150,19 @@ user = User.new(
 )
 user.avatar.attach(io: File.open('app/assets/images/logo_definitivo-solo-p.png'), filename: "#{user.full_name}.png", content_type: 'image/png')
 user.save!
+
+puts 'Creating show: Gato Maula Project for user: Gato Maula Project'
+show = Show.new(
+  user: user,
+  show_category_id: ShowCategory.where(name: 'Banda').first.id,
+  name: 'Gato Maula Project',
+  description: "Gato Maula Project propone una búsqueda experimental tomando al tango como columna vertebral para luego fusionarlo con diferentes estilos musicales como el rock, el jazz, el soul, la electrónica o el hip hop. Fundado en 2012 cuenta con dos discos de estudio y un EP editados: “Siete Vidas” (2013), “Bailarín” (2016) y “Sin Despedidas” (2020). Cuenta con giras internacionales (México y Uruguay) y presencia regular en festivales locales. Además han recorrido las ciudades más importantes del país mostrando su repertorio."
+)
+file = URI.open('https://drive.google.com/file/d/1HUQRCDRh7PLw6vJzQHlia8VyKPnOswwO/view?usp=sharing')
+show.images.attach(io: file, filename: "#{show.name}.png", content_type: 'image/png')
+show.save!
+
+puts '------------------------'
 
 puts 'Creating user: Rama Grin'
 user = User.new(

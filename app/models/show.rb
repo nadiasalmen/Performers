@@ -2,7 +2,7 @@ class Show < ApplicationRecord
   # associations
   belongs_to :user
 
-  has_one :category
+  has_one :show_category
 
   has_many :enquiries
   has_many :faqs
