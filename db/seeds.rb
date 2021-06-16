@@ -3,6 +3,8 @@ require "open-uri"
 puts '------------------------'
 puts 'CLEANING DATABASE'
 puts '------------------------'
+puts 'Deleting show_tags'
+ShowTag.destroy_all
 puts 'Deleting shows'
 Show.destroy_all
 puts 'Deleting users'
@@ -143,11 +145,11 @@ show_category.save!
 puts '------------------------'
 puts 'CREATING TAGS'
 puts '------------------------'
-TAGS = ['Tango', 'Tango Electrónico', 'Tango Fusión', 'Magia', 'Ilusión', 'Asombro', 'Intrépido', 'Atrevido', 'Diferente', 'House', 'Rock', 'Indie', 'Rap', 'Energía', 'Baile', 'Comedia', 'Entretenimiento', 'Show humorístico', 'Standup', 'Tango']
-TAGS.each { |tag_name| Tag.new(name: tag_name) }
+TAGS = ['Tango', 'Tango Electrónico', 'Tango Fusión', 'Magia', 'Ilusión', 'Asombro', 'Intrépido', 'Atrevido', 'Diferente', 'House', 'Rock', 'Indie', 'Rap', 'Energía', 'Baile', 'Comedia', 'Entretenimiento', 'Show Humorístico', 'Stand Up', 'Fanky', 'Electrónica', 'Pop']
+TAGS.each { |tag_name| Tag.create!(name: tag_name) }
 
 puts '------------------------'
-puts 'CREATING USERS & SHOWS'
+puts 'CREATING USERS, SHOWS & SHOW_TAGS'
 puts '------------------------'
 puts 'Creating user: Gato Maula Project'
 user = User.new(
@@ -174,6 +176,11 @@ show.images.attach(io: File.open('app/assets/images/seeds_gato_maula/gmp3.jpg'),
 show.images.attach(io: File.open('app/assets/images/seeds_gato_maula/gmp4.jpg'), filename: "#{show.name}.png", content_type: 'image/png')
 show.save!
 
+puts 'Creating show_tags for show: Gato Maula Project'
+ShowTag.create!(tag_id: Tag.where(name: 'Tango').first.id, show: show)
+ShowTag.create!(tag_id: Tag.where(name: 'Tango Electrónico').first.id, show: show)
+ShowTag.create!(tag_id: Tag.where(name: 'Tango Fusión').first.id, show: show)
+
 puts '------------------------'
 
 puts 'Creating user: Rama Grin'
@@ -199,6 +206,11 @@ show.images.attach(io: File.open('app/assets/images/seeds_rama_grin/ramagrin1.jp
 show.images.attach(io: File.open('app/assets/images/seeds_rama_grin/ramagrin2.jpg'), filename: "#{show.name}.png", content_type: 'image/png')
 show.images.attach(io: File.open('app/assets/images/seeds_rama_grin/ramagrin3.png'), filename: "#{show.name}.png", content_type: 'image/png')
 show.save!
+
+puts 'Creating show_tags for show: Rama Grin'
+ShowTag.create!(tag_id: Tag.where(name: 'Magia').first.id, show: show)
+ShowTag.create!(tag_id: Tag.where(name: 'Ilusión').first.id, show: show)
+ShowTag.create!(tag_id: Tag.where(name: 'Asombro').first.id, show: show)
 
 puts '------------------------'
 
@@ -268,6 +280,11 @@ show.images.attach(io: File.open('app/assets/images/seeds_john_sombriyon/john2.j
 show.images.attach(io: File.open('app/assets/images/seeds_john_sombriyon/john3.png'), filename: "#{show.name}.png", content_type: 'image/png')
 show.save!
 
+puts 'Creating show_tags for show: John Sombriyon'
+ShowTag.create!(tag_id: Tag.where(name: 'Intrépido').first.id, show: show)
+ShowTag.create!(tag_id: Tag.where(name: 'Atrevido').first.id, show: show)
+ShowTag.create!(tag_id: Tag.where(name: 'Diferente').first.id, show: show)
+
 puts '------------------------'
 
 puts 'Creating user: Fiocchi'
@@ -279,7 +296,7 @@ user = User.new(
   phone_number: '+5493415854032',
   news: true,
 )
-user.avatar.attach(io: File.open('app/assets/images/logo_definitivo-solo-p.png'), filename: "#{user.full_name}.png", content_type: 'image/png')
+user.avatar.attach(io: File.open('app/assets/images/seeds_fiocchi/fiocchi2.jpg'), filename: "#{user.full_name}.png", content_type: 'image/png')
 user.save!
 
 puts 'Creating show: Fiocchi for user: Fiocchi'
@@ -289,7 +306,16 @@ show = Show.new(
   name: 'Fiocchi',
   description: "Fiocchi es un dúo rosarino de DJs de música electrónica. Ofrece una propuesta fresca y divertida para tódo tipo de público. Con influencias del funky house presentan un show en el que la electrónica no es el fin, sino un medio para disfrutar de grandes clásicos de la música."
 )
+show.images.attach(io: File.open('app/assets/images/seeds_fiocchi/fiocchi1.jpg'), filename: "#{show.name}.png", content_type: 'image/png')
+show.images.attach(io: File.open('app/assets/images/seeds_fiocchi/fiocchi2.jpg'), filename: "#{show.name}.png", content_type: 'image/png')
+show.images.attach(io: File.open('app/assets/images/seeds_fiocchi/fiocchi3.jpg'), filename: "#{show.name}.png", content_type: 'image/png')
+show.images.attach(io: File.open('app/assets/images/seeds_fiocchi/fiocchi4.jpg'), filename: "#{show.name}.png", content_type: 'image/png')
 show.save!
+
+puts 'Creating show_tags for show: Fiocchi'
+ShowTag.create!(tag_id: Tag.where(name: 'House').first.id, show: show)
+ShowTag.create!(tag_id: Tag.where(name: 'Fanky').first.id, show: show)
+ShowTag.create!(tag_id: Tag.where(name: 'Electrónica').first.id, show: show)
 
 puts '------------------------'
 
@@ -325,6 +351,9 @@ show.images.attach(io: File.open('app/assets/images/seeds_pizzicanti/pizzi10.jpg
 show.images.attach(io: File.open('app/assets/images/seeds_pizzicanti/pizzi11.jpg'), filename: "#{show.name}.png", content_type: 'image/png')
 show.save!
 
+puts 'Creating show_tags for show: Pizzicatti'
+ShowTag.create!(tag_id: Tag.where(name: 'Tango').first.id, show: show)
+
 puts '------------------------'
 
 puts 'Creating user: XPiral'
@@ -351,6 +380,11 @@ show.images.attach(io: File.open('app/assets/images/seeds_xpiral/xpiral2.png'), 
 show.images.attach(io: File.open('app/assets/images/seeds_xpiral/xpiral3.png'), filename: "#{show.name}.png", content_type: 'image/png')
 show.save!
 
+puts 'Creating show_tags for show: Xpiral'
+ShowTag.create!(tag_id: Tag.where(name: 'Pop').first.id, show: show)
+ShowTag.create!(tag_id: Tag.where(name: 'Rock').first.id, show: show)
+ShowTag.create!(tag_id: Tag.where(name: 'Indie').first.id, show: show)
+
 puts '------------------------'
 
 puts 'Creating user: Krishna MFF'
@@ -376,6 +410,11 @@ show.images.attach(io: File.open('app/assets/images/seeds_krishna_mff/krishna1.j
 show.images.attach(io: File.open('app/assets/images/seeds_krishna_mff/krishna2.jpg'), filename: "#{show.name}.png", content_type: 'image/png')
 show.images.attach(io: File.open('app/assets/images/seeds_krishna_mff/krishna3.jpg'), filename: "#{show.name}.png", content_type: 'image/png')
 show.save!
+
+puts 'Creating show_tags for show: KRISHNA'
+ShowTag.create!(tag_id: Tag.where(name: 'Rap').first.id, show: show)
+ShowTag.create!(tag_id: Tag.where(name: 'Energía').first.id, show: show)
+ShowTag.create!(tag_id: Tag.where(name: 'Baile').first.id, show: show)
 
 puts '------------------------'
 
@@ -405,3 +444,9 @@ show.images.attach(io: File.open('app/assets/images/seeds_carlitos_standup/carli
 show.images.attach(io: File.open('app/assets/images/seeds_carlitos_standup/carlitos5.jpg'), filename: "#{show.name}.png", content_type: 'image/png')
 show.images.attach(io: File.open('app/assets/images/seeds_carlitos_standup/carlitos6.jpg'), filename: "#{show.name}.png", content_type: 'image/png')
 show.save!
+
+puts 'Creating show_tags for show: Carlitos Stand Up'
+ShowTag.create!(tag_id: Tag.where(name: 'Comedia').first.id, show: show)
+ShowTag.create!(tag_id: Tag.where(name: 'Entretenimiento').first.id, show: show)
+ShowTag.create!(tag_id: Tag.where(name: 'Show Humorístico').first.id, show: show)
+ShowTag.create!(tag_id: Tag.where(name: 'Stand Up').first.id, show: show)
