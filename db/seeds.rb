@@ -159,10 +159,10 @@ show = Show.new(
   name: 'Gato Maula Project',
   description: "Gato Maula Project propone una búsqueda experimental tomando al tango como columna vertebral para luego fusionarlo con diferentes estilos musicales como el rock, el jazz, el soul, la electrónica o el hip hop. Fundado en 2012 cuenta con dos discos de estudio y un EP editados: “Siete Vidas” (2013), “Bailarín” (2016) y “Sin Despedidas” (2020). Cuenta con giras internacionales (México y Uruguay) y presencia regular en festivales locales. Además han recorrido las ciudades más importantes del país mostrando su repertorio."
 )
-show.images.attach(io: File.open('app/assets/images/seeds_gato_maula/gmp1.jpg'), filename: "#{show.full_name}.png", content_type: 'image/png')
-show.images.attach(io: File.open('app/assets/images/seeds_gato_maula/gmp2.jpg'), filename: "#{show.full_name}.png", content_type: 'image/png')
-show.images.attach(io: File.open('app/assets/images/seeds_gato_maula/gmp3.jpg'), filename: "#{show.full_name}.png", content_type: 'image/png')
-show.images.attach(io: File.open('app/assets/images/seeds_gato_maula/gmp4.jpg'), filename: "#{show.full_name}.png", content_type: 'image/png')
+show.images.attach(io: File.open('app/assets/images/seeds_gato_maula/gmp1.jpg'), filename: "#{show.name}.png", content_type: 'image/png')
+show.images.attach(io: File.open('app/assets/images/seeds_gato_maula/gmp2.jpg'), filename: "#{show.name}.png", content_type: 'image/png')
+show.images.attach(io: File.open('app/assets/images/seeds_gato_maula/gmp3.jpg'), filename: "#{show.name}.png", content_type: 'image/png')
+show.images.attach(io: File.open('app/assets/images/seeds_gato_maula/gmp4.jpg'), filename: "#{show.name}.png", content_type: 'image/png')
 show.save!
 
 puts '------------------------'
@@ -176,7 +176,7 @@ user = User.new(
   phone_number: '+5493415854032',
   news: true,
 )
-user.avatar.attach(io: File.open('app/assets/images/seeds_rama_grin/ramagrin3.jpg'), filename: "#{user.full_name}.png", content_type: 'image/png')
+user.avatar.attach(io: File.open('app/assets/images/seeds_rama_grin/ramagrin3.png'), filename: "#{user.full_name}.png", content_type: 'image/png')
 user.save!
 
 puts 'Creating show: Rama Grin for user: Rama Grin'
@@ -186,9 +186,9 @@ show = Show.new(
   name: 'Rama Grin',
   description: "Sorprendete de cerca con modalidad close up en un show exclusivo para 10 personas o en modalidad escenario para mas. ¿Te animás a asombrarte? Consultar por otras opciones y modalidades por privado, armamos tu show a medida."
 )
-show.images.attach(io: File.open('app/assets/images/seeds_rama_grin/ramagrin1.jpg'), filename: "#{show.full_name}.png", content_type: 'image/png')
-show.images.attach(io: File.open('app/assets/images/seeds_rama_grin/ramagrin2.jpg'), filename: "#{show.full_name}.png", content_type: 'image/png')
-show.images.attach(io: File.open('app/assets/images/seeds_rama_grin/ramagrin3.jpg'), filename: "#{show.full_name}.png", content_type: 'image/png')
+show.images.attach(io: File.open('app/assets/images/seeds_rama_grin/ramagrin1.jpg'), filename: "#{show.name}.png", content_type: 'image/png')
+show.images.attach(io: File.open('app/assets/images/seeds_rama_grin/ramagrin2.jpg'), filename: "#{show.name}.png", content_type: 'image/png')
+show.images.attach(io: File.open('app/assets/images/seeds_rama_grin/ramagrin3.png'), filename: "#{show.name}.png", content_type: 'image/png')
 show.save!
 
 puts '------------------------'
