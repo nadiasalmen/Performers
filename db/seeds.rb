@@ -3,6 +3,8 @@ require "open-uri"
 puts '------------------------'
 puts 'CLEANING DATABASE'
 puts '------------------------'
+puts 'Deleting show_event_categories'
+ShowEventCategory.destroy_all
 puts 'Deleting show_tags'
 ShowTag.destroy_all
 puts 'Deleting shows'
@@ -149,7 +151,7 @@ TAGS = ['Tango', 'Tango Electrónico', 'Tango Fusión', 'Magia', 'Ilusión', 'As
 TAGS.each { |tag_name| Tag.create!(name: tag_name) }
 
 puts '------------------------'
-puts 'CREATING USERS, SHOWS & SHOW_TAGS'
+puts 'CREATING USERS, SHOWS, SHOW_TAGS & SHOW_EVENT_CATEGORIES'
 puts '------------------------'
 puts 'Creating user: Gato Maula Project'
 user = User.new(
@@ -181,6 +183,13 @@ ShowTag.create!(tag_id: Tag.where(name: 'Tango').first.id, show: show)
 ShowTag.create!(tag_id: Tag.where(name: 'Tango Electrónico').first.id, show: show)
 ShowTag.create!(tag_id: Tag.where(name: 'Tango Fusión').first.id, show: show)
 
+puts 'Creating show_event_categories for show: Gato Maula Project'
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Bar - Restó').first.id, show: show)
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Social').first.id, show: show)
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Corporativo').first.id, show: show)
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Evento Cultural').first.id, show: show)
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Otros').first.id, show: show)
+
 puts '------------------------'
 
 puts 'Creating user: Rama Grin'
@@ -211,6 +220,13 @@ puts 'Creating show_tags for show: Rama Grin'
 ShowTag.create!(tag_id: Tag.where(name: 'Magia').first.id, show: show)
 ShowTag.create!(tag_id: Tag.where(name: 'Ilusión').first.id, show: show)
 ShowTag.create!(tag_id: Tag.where(name: 'Asombro').first.id, show: show)
+
+puts 'Creating show_event_categories for show: Rama Grin'
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Bar - Restó').first.id, show: show)
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Social').first.id, show: show)
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Corporativo').first.id, show: show)
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Evento Cultural').first.id, show: show)
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Otros').first.id, show: show)
 
 puts '------------------------'
 
@@ -285,6 +301,13 @@ ShowTag.create!(tag_id: Tag.where(name: 'Intrépido').first.id, show: show)
 ShowTag.create!(tag_id: Tag.where(name: 'Atrevido').first.id, show: show)
 ShowTag.create!(tag_id: Tag.where(name: 'Diferente').first.id, show: show)
 
+puts 'Creating show_event_categories for show: John Sombriyon'
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Bar - Restó').first.id, show: show)
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Social').first.id, show: show)
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Corporativo').first.id, show: show)
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Evento Cultural').first.id, show: show)
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Otros').first.id, show: show)
+
 puts '------------------------'
 
 puts 'Creating user: Fiocchi'
@@ -316,6 +339,13 @@ puts 'Creating show_tags for show: Fiocchi'
 ShowTag.create!(tag_id: Tag.where(name: 'House').first.id, show: show)
 ShowTag.create!(tag_id: Tag.where(name: 'Fanky').first.id, show: show)
 ShowTag.create!(tag_id: Tag.where(name: 'Electrónica').first.id, show: show)
+
+puts 'Creating show_event_categories for show: Fiocchi'
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Bar - Restó').first.id, show: show)
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Social').first.id, show: show)
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Corporativo').first.id, show: show)
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Evento Cultural').first.id, show: show)
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Otros').first.id, show: show)
 
 puts '------------------------'
 
@@ -354,6 +384,13 @@ show.save!
 puts 'Creating show_tags for show: Pizzicatti'
 ShowTag.create!(tag_id: Tag.where(name: 'Tango').first.id, show: show)
 
+puts 'Creating show_event_categories for show: Pizzicatti'
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Bar - Restó').first.id, show: show)
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Social').first.id, show: show)
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Corporativo').first.id, show: show)
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Evento Cultural').first.id, show: show)
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Otros').first.id, show: show)
+
 puts '------------------------'
 
 puts 'Creating user: XPiral'
@@ -385,6 +422,12 @@ ShowTag.create!(tag_id: Tag.where(name: 'Pop').first.id, show: show)
 ShowTag.create!(tag_id: Tag.where(name: 'Rock').first.id, show: show)
 ShowTag.create!(tag_id: Tag.where(name: 'Indie').first.id, show: show)
 
+puts 'Creating show_event_categories for show: Xpiral'
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Bar - Restó').first.id, show: show)
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Social').first.id, show: show)
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Evento Cultural').first.id, show: show)
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Otros').first.id, show: show)
+
 puts '------------------------'
 
 puts 'Creating user: Krishna MFF'
@@ -415,6 +458,9 @@ puts 'Creating show_tags for show: KRISHNA'
 ShowTag.create!(tag_id: Tag.where(name: 'Rap').first.id, show: show)
 ShowTag.create!(tag_id: Tag.where(name: 'Energía').first.id, show: show)
 ShowTag.create!(tag_id: Tag.where(name: 'Baile').first.id, show: show)
+
+puts 'Creating show_event_categories for show: KRISHNA'
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Evento Cultural').first.id, show: show)
 
 puts '------------------------'
 
@@ -450,3 +496,9 @@ ShowTag.create!(tag_id: Tag.where(name: 'Comedia').first.id, show: show)
 ShowTag.create!(tag_id: Tag.where(name: 'Entretenimiento').first.id, show: show)
 ShowTag.create!(tag_id: Tag.where(name: 'Show Humorístico').first.id, show: show)
 ShowTag.create!(tag_id: Tag.where(name: 'Stand Up').first.id, show: show)
+
+puts 'Creating show_event_categories for show: Carlitos Stand Up'
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Bar - Restó').first.id, show: show)
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Social').first.id, show: show)
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Corporativo').first.id, show: show)
+ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Evento Cultural').first.id, show: show)
