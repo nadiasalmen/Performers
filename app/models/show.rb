@@ -14,4 +14,8 @@ class Show < ApplicationRecord
   # active storage associations
   has_many_attached :images
   has_many_attached :videos
+
+  # validations
+  validates :name, presence: true
+  validates :description, presence: true
 end
