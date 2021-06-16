@@ -162,6 +162,7 @@ show = Show.new(
 show.images.attach(io: File.open('app/assets/images/seeds_gato_maula/gmp1.jpg'), filename: "#{show.full_name}.png", content_type: 'image/png')
 show.images.attach(io: File.open('app/assets/images/seeds_gato_maula/gmp2.jpg'), filename: "#{show.full_name}.png", content_type: 'image/png')
 show.images.attach(io: File.open('app/assets/images/seeds_gato_maula/gmp3.jpg'), filename: "#{show.full_name}.png", content_type: 'image/png')
+show.images.attach(io: File.open('app/assets/images/seeds_gato_maula/gmp4.jpg'), filename: "#{show.full_name}.png", content_type: 'image/png')
 show.save!
 
 puts '------------------------'
@@ -175,8 +176,22 @@ user = User.new(
   phone_number: '+5493415854032',
   news: true,
 )
-user.avatar.attach(io: File.open('app/assets/images/logo_definitivo-solo-p.png'), filename: "#{user.full_name}.png", content_type: 'image/png')
+user.avatar.attach(io: File.open('app/assets/images/seeds_rama_grin/ramagrin3.jpg'), filename: "#{user.full_name}.png", content_type: 'image/png')
 user.save!
+
+puts 'Creating show: Rama Grin for user: Rama Grin'
+show = Show.new(
+  user: user,
+  show_category_id: ShowCategory.where(name: 'Magia').first.id,
+  name: 'Rama Grin',
+  description: "Sorprendete de cerca con modalidad close up en un show exclusivo para 10 personas o en modalidad escenario para mas. ¿Te animás a asombrarte? Consultar por otras opciones y modalidades por privado, armamos tu show a medida."
+)
+show.images.attach(io: File.open('app/assets/images/seeds_rama_grin/ramagrin1.jpg'), filename: "#{show.full_name}.png", content_type: 'image/png')
+show.images.attach(io: File.open('app/assets/images/seeds_rama_grin/ramagrin2.jpg'), filename: "#{show.full_name}.png", content_type: 'image/png')
+show.images.attach(io: File.open('app/assets/images/seeds_rama_grin/ramagrin3.jpg'), filename: "#{show.full_name}.png", content_type: 'image/png')
+show.save!
+
+puts '------------------------'
 
 puts 'Creating user: Señores Vuelan'
 user = User.new(
