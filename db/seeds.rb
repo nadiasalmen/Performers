@@ -1,4 +1,6 @@
 puts 'CLEANING DATABASE'
+puts 'Deleting users'
+User.destroy_all
 puts 'Deleting tags'
 Tag.destroy_all
 puts 'Deleting show_categories'
@@ -131,3 +133,136 @@ show_category.save!
 puts 'CREATING TAGS'
 TAGS = ['Tango', 'Tango Electrónico', 'Tango Fusión', 'Magia', 'Ilusión', 'Asombro', 'Intrépido', 'Atrevido', 'Diferente', 'House', 'Rock', 'Indie', 'Rap', 'Energía', 'Baile', 'Comedia', 'Entretenimiento', 'Show humorístico', 'Standup']
 TAGS.each { |tag_name| Tag.new(name: tag_name) }
+
+puts 'CREATING USERS'
+puts 'Creating user: Gato Maula Project'
+user = User.new(
+  email: 'gatomaulaproject@gmail.com',
+  password: 'Performers2021++',
+  role: 'Performer',
+  full_name: 'Gato Maula Project',
+  phone_number: '+5493415854032',
+  news: true,
+)
+user.avatar.attach(io: File.open('app/assets/images/logo_definitivo-solo-p.png'), filename: "#{user.full_name}.png", content_type: 'image/png')
+user.save!
+
+puts 'Creating user: Rama Grin'
+user = User.new(
+  email: 'ramagrin@gmail.com',
+  password: 'Performers2021++',
+  role: 'Performer',
+  full_name: 'Rama Grin',
+  phone_number: '+5493415854032',
+  news: true,
+)
+user.avatar.attach(io: File.open('app/assets/images/logo_definitivo-solo-p.png'), filename: "#{user.full_name}.png", content_type: 'image/png')
+user.save!
+
+puts 'Creating user: Señores Vuelan'
+user = User.new(
+  email: 'señoresvuelan@gmail.com',
+  password: 'Performers2021++',
+  role: 'Performer',
+  full_name: 'Señores Vuelan',
+  phone_number: '+5493415854032',
+  news: true,
+)
+user.avatar.attach(io: File.open('app/assets/images/logo_definitivo-solo-p.png'), filename: "#{user.full_name}.png", content_type: 'image/png')
+user.save!
+
+puts 'Creating user: Cuarteto Aureo'
+user = User.new(
+  email: 'cuartetoaureo@gmail.com',
+  password: 'Performers2021++',
+  role: 'Performer',
+  full_name: 'Cuarteto Aureo',
+  phone_number: '+5493415854032',
+  news: true,
+)
+user.avatar.attach(io: File.open('app/assets/images/logo_definitivo-solo-p.png'), filename: "#{user.full_name}.png", content_type: 'image/png')
+user.save!
+
+puts 'Creating user: Mimo Beto'
+user = User.new(
+  email: 'mimobeto@gmail.com',
+  password: 'Performers2021++',
+  role: 'Performer',
+  full_name: 'Mimo Beto',
+  phone_number: '+5493415854032',
+  news: true,
+)
+user.avatar.attach(io: File.open('app/assets/images/logo_definitivo-solo-p.png'), filename: "#{user.full_name}.png", content_type: 'image/png')
+user.save!
+
+puts 'Creating user: John Sombriyon'
+user = User.new(
+  email: 'johnsombriyon@gmail.com',
+  password: 'Performers2021++',
+  role: 'Performer',
+  full_name: 'John Sombriyon',
+  phone_number: '+5493415854032',
+  news: true,
+)
+user.avatar.attach(io: File.open('app/assets/images/logo_definitivo-solo-p.png'), filename: "#{user.full_name}.png", content_type: 'image/png')
+user.save!
+
+puts 'Creating user: Fiocchi'
+user = User.new(
+  email: 'fiocchi@gmail.com',
+  password: 'Performers2021++',
+  role: 'Performer',
+  full_name: 'Fiocchi',
+  phone_number: '+5493415854032',
+  news: true,
+)
+user.avatar.attach(io: File.open('app/assets/images/logo_definitivo-solo-p.png'), filename: "#{user.full_name}.png", content_type: 'image/png')
+user.save!
+
+puts 'Creating user: Pizzicatti Tango'
+user = User.new(
+  email: 'pizzicattitango@gmail.com',
+  password: 'Performers2021++',
+  role: 'Performer',
+  full_name: 'Pizzicatti Tango',
+  phone_number: '+5493415854032',
+  news: true,
+)
+user.avatar.attach(io: File.open('app/assets/images/logo_definitivo-solo-p.png'), filename: "#{user.full_name}.png", content_type: 'image/png')
+user.save!
+
+puts 'Creating user: XPiral'
+user = User.new(
+  email: 'xpiral@gmail.com',
+  password: 'Performers2021++',
+  role: 'Performer',
+  full_name: 'Xpiral',
+  phone_number: '+5493415854032',
+  news: true,
+)
+user.avatar.attach(io: File.open('app/assets/images/logo_definitivo-solo-p.png'), filename: "#{user.full_name}.png", content_type: 'image/png')
+user.save!
+
+puts 'Creating user: Krishna MFF'
+user = User.new(
+  email: 'krishnamff@gmail.com',
+  password: 'Performers2021++',
+  role: 'Performer',
+  full_name: 'Krishna MFF',
+  phone_number: '+5493415854032',
+  news: true,
+)
+user.avatar.attach(io: File.open('app/assets/images/logo_definitivo-solo-p.png'), filename: "#{user.full_name}.png", content_type: 'image/png')
+user.save!
+
+puts "Creating user: Carlito's Stand Up"
+user = User.new(
+  email: 'carlitosstandup@gmail.com',
+  password: 'Performers2021++',
+  role: 'Performer',
+  full_name: "Carlito's Stand Up",
+  phone_number: '+5493415854032',
+  news: true,
+)
+user.avatar.attach(io: File.open('app/assets/images/logo_definitivo-solo-p.png'), filename: "#{user.full_name}.png", content_type: 'image/png')
+user.save!
