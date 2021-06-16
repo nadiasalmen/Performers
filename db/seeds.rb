@@ -139,6 +139,7 @@ TAGS = ['Tango', 'Tango Electrónico', 'Tango Fusión', 'Magia', 'Ilusión', 'As
 TAGS.each { |tag_name| Tag.new(name: tag_name) }
 
 puts 'CREATING USERS & SHOWS'
+puts '------------------------'
 puts 'Creating user: Gato Maula Project'
 user = User.new(
   email: 'gatomaulaproject@gmail.com',
@@ -148,7 +149,7 @@ user = User.new(
   phone_number: '+5493415854032',
   news: true,
 )
-user.avatar.attach(io: File.open('app/assets/images/logo_definitivo-solo-p.png'), filename: "#{user.full_name}.png", content_type: 'image/png')
+user.avatar.attach(io: File.open('app/assets/images/seeds_gato_maula/gmp4.jpg'), filename: "#{user.full_name}.png", content_type: 'image/png')
 user.save!
 
 puts 'Creating show: Gato Maula Project for user: Gato Maula Project'
@@ -158,8 +159,9 @@ show = Show.new(
   name: 'Gato Maula Project',
   description: "Gato Maula Project propone una búsqueda experimental tomando al tango como columna vertebral para luego fusionarlo con diferentes estilos musicales como el rock, el jazz, el soul, la electrónica o el hip hop. Fundado en 2012 cuenta con dos discos de estudio y un EP editados: “Siete Vidas” (2013), “Bailarín” (2016) y “Sin Despedidas” (2020). Cuenta con giras internacionales (México y Uruguay) y presencia regular en festivales locales. Además han recorrido las ciudades más importantes del país mostrando su repertorio."
 )
-file = URI.open('https://drive.google.com/file/d/1HUQRCDRh7PLw6vJzQHlia8VyKPnOswwO/view?usp=sharing')
-show.images.attach(io: file, filename: "#{show.name}.png", content_type: 'image/png')
+show.images.attach(io: File.open('app/assets/images/seeds_gato_maula/gmp1.jpg'), filename: "#{show.full_name}.png", content_type: 'image/png')
+show.images.attach(io: File.open('app/assets/images/seeds_gato_maula/gmp2.jpg'), filename: "#{show.full_name}.png", content_type: 'image/png')
+show.images.attach(io: File.open('app/assets/images/seeds_gato_maula/gmp3.jpg'), filename: "#{show.full_name}.png", content_type: 'image/png')
 show.save!
 
 puts '------------------------'
