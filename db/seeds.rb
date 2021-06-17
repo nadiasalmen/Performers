@@ -3,6 +3,8 @@ require "open-uri"
 puts '------------------------'
 puts 'CLEANING DATABASE'
 puts '------------------------'
+puts 'Deleting youtube_videos'
+YoutubeVideo.destroy_all
 puts 'Deleting show_event_categories'
 ShowEventCategory.destroy_all
 puts 'Deleting show_tags'
@@ -151,7 +153,7 @@ TAGS = ['Tango', 'Tango Electrónico', 'Tango Fusión', 'Magia', 'Ilusión', 'As
 TAGS.each { |tag_name| Tag.create!(name: tag_name) }
 
 puts '------------------------'
-puts 'CREATING USERS, SHOWS, SHOW_TAGS & SHOW_EVENT_CATEGORIES'
+puts 'CREATING USERS, SHOWS, SHOW_TAGS, SHOW_EVENT_CATEGORIES & YOUTUBE VIDEOS'
 puts '------------------------'
 puts 'Creating user: Gato Maula Project'
 user = User.new(
@@ -162,7 +164,8 @@ user = User.new(
   phone_number: '+5493415854032',
   news: true,
 )
-user.avatar.attach(io: File.open('app/assets/images/seeds_gato_maula/gmp4.jpg'), filename: "#{user.full_name}.png", content_type: 'image/png')
+file = URI.open('https://yt3.ggpht.com/ytc/AAUvwnjcjy5dZXLCg-V11xqaUCcDd2VTMZsHSU1S1omB=s176-c-k-c0x00ffffff-no-rj')
+user.avatar.attach(io: file, filename: "#{user.full_name}.png", content_type: 'image/png')
 user.save!
 
 puts 'Creating show: Gato Maula Project for user: Gato Maula Project'
@@ -189,6 +192,13 @@ ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Social')
 ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Corporativo').first.id, show: show)
 ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Evento Cultural').first.id, show: show)
 ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Otros').first.id, show: show)
+
+puts 'Creating youtube_videos for show: Gato Maula Project'
+YoutubeVideo.create!(show: show, video_url: 'https://www.youtube.com/watch?v=waWt07sqzBc')
+YoutubeVideo.create!(show: show, video_url: 'https://www.youtube.com/watch?v=do3Ws3EvT54')
+YoutubeVideo.create!(show: show, video_url: 'https://www.youtube.com/watch?v=wiVI6Zf4RyQ')
+YoutubeVideo.create!(show: show, video_url: 'https://www.youtube.com/watch?v=ntuI1KC9j0I')
+YoutubeVideo.create!(show: show, video_url: 'https://www.youtube.com/watch?v=FdTr6cpL3VI')
 
 puts '------------------------'
 
@@ -308,6 +318,9 @@ ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Corporat
 ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Evento Cultural').first.id, show: show)
 ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Otros').first.id, show: show)
 
+puts 'Creating youtube_videos for show: John Sombriyon'
+YoutubeVideo.create!(show: show, video_url: 'https://www.youtube.com/watch?v=7LKM1H24kWo')
+
 puts '------------------------'
 
 puts 'Creating user: Fiocchi'
@@ -358,7 +371,8 @@ user = User.new(
   phone_number: '+5493415854032',
   news: true,
 )
-user.avatar.attach(io: File.open('app/assets/images/seeds_pizzicanti/pizzi6.jpg'), filename: "#{user.full_name}.png", content_type: 'image/png')
+file = URI.open('https://yt3.ggpht.com/ytc/AAUvwnj412VTXYnl2_vcesycPSbIARJbBc3X25Pjgrhw=s176-c-k-c0x00ffffff-no-rj')
+user.avatar.attach(io: file, filename: "#{user.full_name}.png", content_type: 'image/png')
 user.save!
 
 puts 'Creating show: Pizzicatti for user: Pizzicatti'
@@ -391,6 +405,10 @@ ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Corporat
 ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Evento Cultural').first.id, show: show)
 ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Otros').first.id, show: show)
 
+puts 'Creating youtube_videos for show: Pizzicatti'
+YoutubeVideo.create!(show: show, video_url: 'https://www.youtube.com/watch?v=9MYaSGAu3c8')
+YoutubeVideo.create!(show: show, video_url: 'https://www.youtube.com/watch?v=PI7gOedJAgc')
+
 puts '------------------------'
 
 puts 'Creating user: XPiral'
@@ -402,7 +420,8 @@ user = User.new(
   phone_number: '+5493415854032',
   news: true,
 )
-user.avatar.attach(io: File.open('app/assets/images/seeds_xpiral/xpiral2.png'), filename: "#{user.full_name}.png", content_type: 'image/png')
+file = URI.open('https://yt3.ggpht.com/ytc/AAUvwnjC1D_KneM7DoT57cyJmHLHy3g-QnFJ4N3w7msLiQ=s176-c-k-c0x00ffffff-no-rj')
+user.avatar.attach(io: file, filename: "#{user.full_name}.png", content_type: 'image/png')
 user.save!
 
 puts 'Creating show: Xpiral for user: Xpiral'
@@ -428,6 +447,11 @@ ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Social')
 ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Evento Cultural').first.id, show: show)
 ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Otros').first.id, show: show)
 
+puts 'Creating youtube_videos for show: Xpiral'
+YoutubeVideo.create!(show: show, video_url: 'https://www.youtube.com/watch?v=tw877KAp6ZE')
+YoutubeVideo.create!(show: show, video_url: 'https://www.youtube.com/watch?v=T_tlqBOm8nU')
+YoutubeVideo.create!(show: show, video_url: 'https://www.youtube.com/watch?v=9_OirgAg_s8')
+
 puts '------------------------'
 
 puts 'Creating user: Krishna MFF'
@@ -439,7 +463,8 @@ user = User.new(
   phone_number: '+5493415854032',
   news: true,
 )
-user.avatar.attach(io: File.open('app/assets/images/seeds_krishna_mff/krishna3.jpg'), filename: "#{user.full_name}.png", content_type: 'image/png')
+file = URI.open('https://yt3.ggpht.com/ytc/AAUvwngCKaAqLIV0Xdwxy7-y5z7L4jTlQDlw2jZpzaezZA=s176-c-k-c0x00ffffff-no-rj')
+user.avatar.attach(io: file, filename: "#{user.full_name}.png", content_type: 'image/png')
 user.save!
 
 puts 'Creating show: Krishna MFF for user: Krishna MFF'
@@ -461,6 +486,10 @@ ShowTag.create!(tag_id: Tag.where(name: 'Baile').first.id, show: show)
 
 puts 'Creating show_event_categories for show: KRISHNA'
 ShowEventCategory.create!(event_category_id: EventCategory.where(name: 'Evento Cultural').first.id, show: show)
+
+puts 'Creating youtube_videos for show: KRISHNA'
+YoutubeVideo.create!(show: show, video_url: 'https://www.youtube.com/watch?v=MBm5t4iBWmM')
+YoutubeVideo.create!(show: show, video_url: 'https://www.youtube.com/watch?v=EInwK7392tc')
 
 puts '------------------------'
 
