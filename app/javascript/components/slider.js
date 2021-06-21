@@ -1,32 +1,27 @@
-const cardsRow = document.querySelector('.carousel-container');
-
-const leftArrow = document.querySelector('.left-arrow');
-const rightArrow = document.querySelector('.right-arrow');
-
-// const cardsRow2 = document.querySelector('.acustic');
-
-// const leftArrow2 = document.querySelector('.left-arrow2');
-// const rightArrow2 = document.querySelector('.right-arrow2');
+const leftArrow = document.querySelectorAll('.left-arrow');
+const rightArrow = document.querySelectorAll('.right-arrow');
+console.log(leftArrow);
+console.log(rightArrow);
 
 // ? ----- ----- Event Listener para la flecha derecha. ----- -----
-const initRightArrowrOnSlider = () => {
-  rightArrow.addEventListener('click', () => {
-    cardsRow.scrollLeft += cardsRow.offsetWidth;
-  });
-  //rightArrow2.addEventListener('click', () => {
-  //  cardsRow2.scrollLeft += cardsRow2.offsetWidth;
-  //});
-};
+const initRightArrowOnSlider = () => {
+  rightArrow.forEach(rightArrow => addEventListener('click', (event) => {
+    const cardsRowRight = event.target.closest('.parent-container').querySelector('.carousel-container');
+    cardsRowRight.scrollLeft += cardsRowRight.offsetWidth;
+    console.log(cardsRowRight.scrollLeft);
+    console.log(cardsRowRight.offsetWidth);
+  }));
+  };
 
-// ? ----- ----- Event Listener para la flecha izquierda. ----- -----
-const initLeftArrowrOnSlider = () => {
-  leftArrow.addEventListener('click', () => {
-    cardsRow.scrollLeft -= cardsRow.offsetWidth;
-  });
-  //leftArrow2.addEventListener('click', () => {
-  //  cardsRow2.scrollLeft -= cardsRow2.offsetWidth;
-  //});
-};
+  // ? ----- ----- Event Listener para la flecha izquierda. ----- -----
+const initLeftArrowOnSlider = () => {
+  leftArrow.forEach(leftArrow => addEventListener('click', (event) => {
+    const cardsRowLeft = event.target.closest('.parent-container');
+    const cardMoveLeft = cardsRowLeft.querySelector('.carousel-container');
+    cardMoveLeft.scrollLeft -= cardMoveLeft.offsetWidth;
+    console.log("hola")
+  }));
+  };
 
 
-export { initRightArrowrOnSlider, initLeftArrowrOnSlider };
+export { initRightArrowOnSlider, initLeftArrowOnSlider };

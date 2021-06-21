@@ -29,15 +29,15 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { initJqueryForm } from '../plugins/init_jqueryform';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
-import { initRightArrowrOnSlider, initLeftArrowrOnSlider } from '../components/slider';
+import { initRightArrowOnSlider, initLeftArrowOnSlider } from '../components/slider';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initJqueryForm();
   initUpdateNavbarOnScroll();
-  initRightArrowrOnSlider();
-  initLeftArrowrOnSlider();
+  initRightArrowOnSlider();
+  initLeftArrowOnSlider();
 });
 
 
