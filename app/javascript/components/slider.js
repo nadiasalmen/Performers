@@ -1,27 +1,100 @@
-const leftArrow = document.querySelectorAll('.left-arrow');
-const rightArrow = document.querySelectorAll('.right-arrow');
-console.log(leftArrow);
-console.log(rightArrow);
-
-// ? ----- ----- Event Listener para la flecha derecha. ----- -----
-const initRightArrowOnSlider = () => {
-  rightArrow.forEach(rightArrow => addEventListener('click', (event) => {
-    const cardsRowRight = event.target.closest('.parent-container').querySelector('.carousel-container');
-    cardsRowRight.scrollLeft += cardsRowRight.offsetWidth;
-    console.log(cardsRowRight.scrollLeft);
-    console.log(cardsRowRight.offsetWidth);
-  }));
-  };
-
-  // ? ----- ----- Event Listener para la flecha izquierda. ----- -----
-const initLeftArrowOnSlider = () => {
-  leftArrow.forEach(leftArrow => addEventListener('click', (event) => {
-    const cardsRowLeft = event.target.closest('.parent-container');
-    const cardMoveLeft = cardsRowLeft.querySelector('.carousel-container');
-    cardMoveLeft.scrollLeft -= cardMoveLeft.offsetWidth;
-    console.log("hola")
-  }));
-  };
+import Swiper from 'swiper';
+import 'swiper/swiper-bundle.css';
 
 
-export { initRightArrowOnSlider, initLeftArrowOnSlider };
+const initSwiperSlider = () => {
+  const swiper = new Swiper('.mySwiper', {
+    // Default parameters
+
+    observer: true,
+    observeParents: true,
+    slidesPerView: 3,
+    spaceBetween: 3,
+    slidesPerGroup: 3,
+
+    // navigation: {
+    //   nextEl: '.swiper-button-next',
+    //   prevEl: '.swiper-button-prev',
+    // },
+
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        slidesPerGroup: 1,
+      },
+      575: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        slidesPerGroup: 1
+      },
+      // when window width is >= 480px
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+        slidesPerGroup: 2
+      },
+      // when window width is >= 640px
+      992: {
+        slidesPerView: 2,
+        spaceBetween: 5,
+        slidesPerGroup: 2
+      },
+      1200: {
+        slidesPerView: 3,
+        spaceBetween: 40,
+        slidesPerGroup: 3
+      }
+    }
+  })
+
+  const swiper2 = new Swiper('.mySwiper2', {
+    // Default parameters
+
+    observer: true,
+    observeParents: true,
+    slidesPerView: 3,
+    spaceBetween: 3,
+    slidesPerGroup: 3,
+
+    // navigation: {
+    //   nextEl: '.swiper-button-next',
+    //   prevEl: '.swiper-button-prev',
+    // },
+
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1.5,
+        spaceBetween: 20,
+        slidesPerGroup: 1.5,
+      },
+      575: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+        slidesPerGroup: 2
+      },
+      // when window width is >= 480px
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        slidesPerGroup: 3
+      },
+      // when window width is >= 640px
+      992: {
+        slidesPerView: 2.5,
+        spaceBetween: 5,
+        slidesPerGroup: 2.5
+      },
+      1200: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+        slidesPerGroup: 4
+      }
+    }
+  })
+};
+
+export { initSwiperSlider }
+

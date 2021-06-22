@@ -24,20 +24,22 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import 'swiper/swiper-bundle.css';
+
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { initJqueryForm } from '../plugins/init_jqueryform';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
-import { initRightArrowOnSlider, initLeftArrowOnSlider } from '../components/slider';
+import { initSwiperSlider } from '../components/slider';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  initSwiperSlider();
   initJqueryForm();
   initUpdateNavbarOnScroll();
-  initRightArrowOnSlider();
-  initLeftArrowOnSlider();
 });
 
 

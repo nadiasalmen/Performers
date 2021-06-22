@@ -25,3 +25,18 @@
   opacity: 0.8;
   color: white;
 }
+
+
+@media (max-width: 768px) {
+  .btn-personaliza {
+    display:none;
+  }
+
+}
+
+@media (min-width: 768px) {
+  .btn-personaliza-bottom {
+    display:none!important;
+  }
+
+}
