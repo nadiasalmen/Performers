@@ -25,14 +25,18 @@ require("channels")
 // External imports
 import "bootstrap";
 import 'swiper/swiper-bundle.css';
-
-
+import "controllers";
 
 // Internal imports, e.g:
+
+// Import plugins
 // import { initSelect2 } from '../components/init_select2';
 import { initJqueryForm } from '../plugins/init_jqueryform';
+
+// Import components
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { initSwiperSlider } from '../components/slider';
+import { loadDynamicBannerText } from '../components/banner';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -40,6 +44,5 @@ document.addEventListener('turbolinks:load', () => {
   initSwiperSlider();
   initJqueryForm();
   initUpdateNavbarOnScroll();
+  loadDynamicBannerText();
 });
-
-

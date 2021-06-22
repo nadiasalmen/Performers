@@ -33,7 +33,12 @@ gem 'devise'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
-group :development, :test do  gem 'pry-byebug'
+
+# Add Cloudinary to manage images and videos
+gem 'cloudinary', '~> 1.16.0'
+
+group :development, :test do
+  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'
 

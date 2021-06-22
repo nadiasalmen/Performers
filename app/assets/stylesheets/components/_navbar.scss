@@ -1,13 +1,11 @@
 /* Style the navbar */
 .navbar-per {
-  display: flex;
-  justify-content: space-between;
   background-color: transparent;
   transition: 0.5s background-color ease;
   background: linear-gradient(180deg, #000000 0%, rgba(128, 128, 128, 0) 100%);
 }
 
-.navbar-per .navbar-collapse {
+.navbar-per {
   flex-grow: 0;
 }
 
@@ -18,4 +16,39 @@
 .navbar-per-black {
   background-color: black;
   background: linear-gradient(to bottom, #000000c4, black);
+}
+
+@media (max-width: 767px) {
+  /* For a screen < 570px, this CSS will be read */
+  .buttons-nav-bar-md {
+    display: none;
+  }
+
+  .buttons-nav-bar-sm {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-per, .navbar-per-container {
+    display: inline-grid;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 768px) {
+  /* For a screen > 571px, this CSS will be read */
+  .buttons-nav-bar-md {
+    display: flex;
+    align-items: center;
+  }
+
+  .buttons-nav-bar-sm {
+    display: none;
+  }
+
+  .navbar-per, .navbar-per-container {
+    display: flex;
+    justify-content: space-between;
+  }
 }
