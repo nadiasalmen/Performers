@@ -1,32 +1,161 @@
-.card-container {
-  perspective: 700px;
-  display: grid;
+// recomended cards
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  width: 23rem;
+  height: 16rem;
+  display: flex;
+  border-radius: 0.8rem;
 }
 
-.card-flip {
-  display: grid; grid-template: 1fr / 1fr;
-  grid-template-areas: "frontAndBack";
+.card-info {
+  flex-direction:column;
+  align-self: flex-end;
+}
+.card-title {
+  font-weight: bold;
+  font-size: 2.2rem;
 }
 
-.card-flip, .card-container {
-  transform-style: preserve-3d;
-  transition: all 0.7s ease;
+.pill-button {
+  font-size: 0.7rem;
+  border-radius: 50rem;
+  padding: 0.1rem 0.5rem;
+  background-color: rgba(233, 232, 232, 0.5);
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+  color: white;
 }
 
-.card-flip div {
-  backface-visibility: hidden;
-  transform-style: preserve-3d;
+.stars-rating {
+  justify-content: flex-end;
+}
+.card-pills-and-rating {
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.card-container:hover .card-flip {
-  transform: rotateY(180deg);
+.fa-star {
+  color: #ff652e;
 }
 
-.front {
-  grid-area: frontAndBack;
+.fa-star-half-alt {
+  color: #ff652e;
 }
 
-.back {
-  grid-area: frontAndBack;
-  transform: rotateY(-180deg);
+
+// default cards
+
+.default-card-category {
+  background-size: cover;
+  background-position: center;
+  width: 23rem;
+  height: 14rem;
+  display: flex;
+  border-radius: 0.8rem;
+}
+
+.default-card-info {
+  flex-direction:column;
+  align-self: flex-end;
+  transform: translateY(5px);
+  background-image: linear-gradient(to top, black, rgba(255,0,0,0));
+}
+.default-card-title {
+  font-weight: bold;
+  font-size: 1.5rem;
+  transform: translateY(40px);
+  transition: all 0.3s ease;
+}
+
+.default-pill-button {
+  font-size: 0.7rem;
+  border-radius: 50rem;
+  padding: 0.1rem 0.5rem;
+  background-color: rgba(233, 232, 232, 0.5);
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+  color: white;
+}
+
+.default-stars-rating {
+  margin-left: 1rem;
+  font-size: 0.8rem;
+}
+.default-card-pills-and-rating {
+  font-size: 15px;
+  justify-content: space-between;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.fa-star {
+  color: #ff652e;
+
+}
+
+.fa-star-half-alt {
+  color: #ff652e;
+}
+
+.default-card-category:hover .default-card-pills-and-rating {
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.default-card-category:hover .default-card-title {
+  transform: translateY(1px);
+  transition: all 0.3s ease;
+}
+
+.default-card-category:hover .default-card-info {
+  background-image: linear-gradient(to top, black, rgba(255,0,0,0));
+  transition: all 0.3s ease;
+  transform: translateY(0px);
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .default-card-info {
+    display:none;
+  }
+  .default-card-category {
+    border-radius: 1.5rem;
+  }
+
+}
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {
+  .default-card-info {
+    display:none;
+  }
+  .default-card-category {
+    border-radius: 1.5rem;
+  }
+  .card-pills-and-rating {
+    display:none;
+  }
+
+
+}
+// Medium devices (tablets, 768px and up)
+@media (max-width: 768px) {
+  .default-card-info {
+    display:none;
+  }
+  .default-card-category {
+    border-radius: 1.5rem;
+  }
+}
+// Large devices (desktops, 992px and up)
+@media (max-width: 992px) {
+  .card-pills-and-rating {
+    display:none;
+  }
+}
+// Extra large devices (large desktops, 1200px and up)
+@media (max-width: 1200px) {
+
 }

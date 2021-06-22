@@ -1,0 +1,125 @@
+.card-slider-container {
+	width: 90%;
+	margin: auto;
+}
+
+/* ---- ----- ----- Contenedor Titulo y Controles ----- ----- ----- */
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+}
+
+.header h3 {
+	color: #fff;
+	font-size: 30px;
+  font-weight: bold;
+}
+
+/* ---- ----- ----- Contenedor Principal y Flechas ----- ----- ----- */
+.card-slider {
+	margin-bottom: 70px;
+}
+
+
+/* ---- ----- ----- Carousel ----- ----- ----- */
+.card-slider .carousel-container {
+	width: 100%;
+	padding: 20px 0;
+	overflow: hidden;
+	scroll-behavior: smooth;
+}
+.carousel-container {
+  mask-image: linear-gradient(to left, transparent 1%, black 20%)
+}
+
+.card-slider .carousel-container .carousel {
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.card-slider .carousel-container .carousel .card-category {
+	min-width: 31%;
+	transition: .3s ease all;
+	box-shadow: 5px 5px 10px rgba(0,0,0, .3);
+}
+
+
+/* ---- ----- ----- Media Queries ----- ----- ----- */
+@media screen and (max-width: 800px) {
+	header .logotipo {
+		margin-bottom: 10px;
+		font-size: 30px;
+	}
+
+	header .contenedor {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.pelicula-principal {
+		font-size: 14px;
+	}
+
+	.pelicula-principal .descripcion {
+		max-width: 100%;
+	}
+
+	.card-slider .carousel-container {
+		overflow: visible;
+	}
+
+	.card-slider .carousel-container .carousel {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 20px;
+	}
+
+	.card-slider .indicadores,
+	.card-slider .flecha-izquierda,
+	.card-slider .flecha-derecha {
+		display: none;
+	}
+}
+
+
+
+// asdasdasd
+
+
+.swiper-container {
+	width: 100%;
+	height: 100%;
+	mask-image: linear-gradient(to left, transparent 1%, black 20%)
+}
+
+.swiper-slide {
+	font-size: 18px;
+
+	/* Center slide text vertically */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+
+.swiper-slide img {
+	display: block;
+	width: auto;
+	height: 100%;
+	object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .arrow-container {
+    display:none;
+  }
+}
