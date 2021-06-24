@@ -3,5 +3,5 @@ class YoutubeVideo < ApplicationRecord
   belongs_to :show
 
   # validations
-  validates :url, presence: true
+  validates :video_url, presence: true
 end
