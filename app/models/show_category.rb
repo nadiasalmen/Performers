@@ -3,7 +3,7 @@ class ShowCategory < ApplicationRecord
   has_one_attached :image
 
   #associations
-  belong_to :show
+  has_many :shows
 
   # validations
   validates :name, inclusion: { in: ['Acústico', 'Magia', 'Banda', 'Infantil', 'Amenización', 'Baile', 'DJ', 'Animación', 'Stand Up', 'Otros'] }
