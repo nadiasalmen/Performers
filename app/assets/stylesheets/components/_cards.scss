@@ -1,4 +1,4 @@
-// recomended cards
+// Recommended cards
 
 .card-category {
   background-size: cover;
@@ -13,6 +13,7 @@
   flex-direction:column;
   align-self: flex-end;
 }
+
 .card-title {
   font-weight: bold;
   font-size: 2.2rem;
@@ -31,6 +32,7 @@
 .stars-rating {
   justify-content: flex-end;
 }
+
 .card-pills-and-rating {
   font-size: 15px;
   display: flex;
@@ -46,7 +48,7 @@
 }
 
 
-// default cards
+// Default cards
 
 .default-card-category {
   background-size: cover;
@@ -63,6 +65,7 @@
   transform: translateY(5px);
   background-image: linear-gradient(to top, black, rgba(255,0,0,0));
 }
+
 .default-card-title {
   font-weight: bold;
   font-size: 1.5rem;
@@ -84,6 +87,7 @@
   margin-left: 1rem;
   font-size: 0.8rem;
 }
+
 .default-card-pills-and-rating {
   font-size: 15px;
   justify-content: space-between;
@@ -116,6 +120,21 @@
   transform: translateY(0px);
 }
 
+// Large show page card
+
+.show-large-card-title {
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.show-large-star {
+  font-size: 1.5rem;
+}
+
+.show-large-pill-button {
+  font-size: 1rem;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .default-card-info {
@@ -124,8 +143,8 @@
   .default-card-category {
     border-radius: 1.5rem;
   }
-
 }
+
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {
   .default-card-info {
@@ -137,9 +156,8 @@
   .card-pills-and-rating {
     display:none;
   }
-
-
 }
+
 // Medium devices (tablets, 768px and up)
 @media (max-width: 768px) {
   .default-card-info {
@@ -149,13 +167,14 @@
     border-radius: 1.5rem;
   }
 }
+
 // Large devices (desktops, 992px and up)
 @media (max-width: 992px) {
   .card-pills-and-rating {
     display:none;
   }
 }
+
 // Extra large devices (large desktops, 1200px and up)
 @media (max-width: 1200px) {
-
 }
