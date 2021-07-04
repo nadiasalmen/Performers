@@ -50,19 +50,14 @@ const swiper = new Swiper('.mySwiper', {
   }
 });
 
-
-
-
 let arr_next = document.querySelectorAll('.right-arrow') //your arrows class name
 let arr_prev = document.querySelectorAll('.left-arrow') //your arrows class name
-
 
 const swiper2 = $('.swiper-container').each(function (index, element) {
 
   $(this).addClass('swiper' + index);
   arr_next[index].setAttribute('id', 'next-arrow' + index);
   arr_prev[index].setAttribute('id', 'prev-arrow' + index);
-
 
   new Swiper('.swiper' + index, {
     // Default parameters
@@ -111,5 +106,4 @@ const swiper2 = $('.swiper-container').each(function (index, element) {
   });
 });
 
-export { swiper, swiper2 }
-
+export { swiper, swiper2}
