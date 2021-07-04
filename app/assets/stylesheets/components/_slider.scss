@@ -120,3 +120,27 @@
     display:none;
   }
 }
+
+// Show page swiper slider
+
+.swiper-button-prev {
+  background-image: url(utilities/prev.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+}
+
+.swiper-button-prev::after {
+  display: none;
+}
+
+.swiper-button-next {
+  background-image: url(utilities/next.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+}
+
+.swiper-button-next::after {
+  display: none;
+}
