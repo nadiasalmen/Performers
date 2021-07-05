@@ -25,6 +25,17 @@
         <%= link_to "Contratá", "/coming_soon", class: "button btn-orange px-4 py-1 border-0 rounded-lg rounded-pill ml-2 font-weight-light" %>
       </div>
     </div>
+    <div class="container h-15" id="swiper-container-buttons-wrapper">
+      <div class="carousel-dimension swiper-container">
+        <div class="swiper-wrapper">
+          <% @show.images.each do |image| %>
+            <div class="swiper-slide"><%= cl_image_tag image.key %></div>
+          <% end %>
+        </div>
+      </div>
+      <div class="swiper-button-next right-arrow"></div>
+      <div class="swiper-button-prev left-arrow"></div>
+    </div>
     <div class="d-flex py-3 justify-content-center align-items-center">
       <%= link_to "Ver más", "/coming_soon", class: "button btn-transparent-grey px-4 py-1 border-0 rounded-lg rounded-pill ml-2 fs-20 font-weight-light" %>
     </div>

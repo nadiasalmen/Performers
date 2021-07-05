@@ -1,8 +1,8 @@
 class Show < ApplicationRecord
   # associations
   belongs_to :user
+  belongs_to :show_category
 
-  has_many :show_categories
   has_many :enquiries, dependent: :destroy
   has_many :faqs, dependent: :destroy
   has_many :reviews, dependent: :destroy
