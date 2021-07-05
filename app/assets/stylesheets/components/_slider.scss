@@ -144,3 +144,24 @@
 .swiper-button-next::after {
   display: none;
 }
+
+#swiper-container-buttons-wrapper {
+  position: relative;
+}
+
+@media (min-width: 37.5em) {
+  #swiper-container-buttons-wrapper  {
+    margin-left: auto;
+    margin-right: auto;
+    width: 92%;
+    /* make room for arrows */
+    padding-left: 4em;
+    padding-right: 4em;
+  }
+}
+
+@media (min-width: 43.75em) {
+  #swiper-container-buttons-wrapper  {
+    width: 95%;
+  }
+}
